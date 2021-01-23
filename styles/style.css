@@ -28,4 +28,6 @@ h1 {
     border-color: black;
     height: 50px;
     background-color: maroon;
+    text-decoration: none;
+    color: white;
 }
