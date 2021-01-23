@@ -1,6 +1,6 @@
 html,
 body {
-    background-color: slategrey;
+    background-color: #23282d;
     height: 100%;
     margin: 0;
 }
@@ -57,9 +57,10 @@ body {
 
 h1 {
     text-align: center;
+    color: navajowhite;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: navajowhite;
 }
