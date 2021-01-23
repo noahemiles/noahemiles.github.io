@@ -1,28 +1,43 @@
 html,
 body {
-    background-color: lightgray;
+    background-color: darkgray;
     height: 100%;
     margin: 0;
 }
 
 body {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
 }
 
-h1 {
-    text-align: center;
+#nav-bar {
+    display: flex;
+    height: 5%;
+    width: 100%;
+    border: solid;
+    border-top: none;
+    border-width: 1px;
+}
+
+#content {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #left-content,
 #right-content {
     width: 20%;
     border: solid;
+    border-top: none;
+    border-bottom: none;
     border-width: 1px;
 }
 
 #inner-content {
+    padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,4 +54,13 @@ h1 {
     background-color: maroon;
     text-decoration: none;
     color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
