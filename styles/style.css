@@ -53,6 +53,8 @@ body {
     background-color: maroon;
     text-decoration: none;
     color: white;
+    /*remove box around autofocus*/
+    outline: none;
 }
 
 h1 {
