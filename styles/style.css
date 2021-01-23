@@ -73,17 +73,17 @@ body {
     height: 50px;
     background-color: maroon;
     text-decoration: none;
-    color: white;
+    color: #b3b1a5;
     /*remove box around autofocus*/
     outline: none;
 }
 
 h1 {
     text-align: center;
-    color: navajowhite;
+    color: #b3b1a5;
 }
 
 a {
     text-decoration: none;
-    color: navajowhite;
+    color: #b3b1a5;
 }
