@@ -27,10 +27,6 @@ body {
     border-width: 1px;
 }
 
-#burger {
-    font-size: xx-large;
-}
-
 #content {
     height: 100vh;
     margin: 0;
