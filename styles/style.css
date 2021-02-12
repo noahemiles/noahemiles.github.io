@@ -1,20 +1,21 @@
-html,
-body, #container, #content {
-    background-color: #23282d;
-    height: 100%;
-    width: 100%;
+*, *::before,*::after {
     margin: 0;
+    padding: 0;
 }
 
+html,
+body {
+    background: radial-gradient(rgba(0, 75, 0, 0.164), #23282d);
+    overflow: hidden;
+}
 
 #nav-bar {
+    min-height: 10vh;
+    width: 100%;
+    margin: auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-around;
-    padding-left: 20px;
-    height: 5vh;
-    width: 100vh;
+    align-items: center;
     border: solid;
     border-top: none;
     border-left: none;
@@ -23,6 +24,7 @@ body, #container, #content {
 }
 
 #content {
+    min-height:90vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -65,11 +67,13 @@ body, #container, #content {
     color: #b3b1a5;
     /*remove box around autofocus*/
     outline: none;
+    margin-top: 50px;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #b3b1a5;
+    color: wheat;
 }
 
 a {
