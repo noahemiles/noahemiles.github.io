@@ -1,12 +1,15 @@
 *, *::before,*::after {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
 }
 
 html,
 body {
-    background: radial-gradient(rgba(0, 75, 0, 0.164), #23282d);
+    font-size: 100%;
+    background: radial-gradient(rgba(1, 85, 1, 0.164), #23282d);
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 #nav-bar {
@@ -28,6 +31,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#project-content {
+    min-height:90vh;
 }
 
 #left-content,
@@ -73,10 +80,10 @@ body {
 
 h1 {
     text-align: center;
-    color: wheat;
+    color: whitesmoke;
 }
 
 a {
     text-decoration: none;
-    color: #b3b1a5;
+    color: whitesmoke;
 }
