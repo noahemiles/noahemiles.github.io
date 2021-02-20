@@ -39,7 +39,7 @@ body {
 
 #project-panel {
     min-height:10px;
-    width: 50px;
+    min-width: 50px;
     border:1px;
     border-style: solid;
     background: green;
