@@ -37,6 +37,14 @@ body {
     min-height:90vh;
 }
 
+#project-panel {
+    min-height:10px;
+    width: 50px;
+    border:1px;
+    border-style: solid;
+    background: green;
+}
+
 #left-content,
 #right-content {
     width: 20%;
