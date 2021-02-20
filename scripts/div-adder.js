@@ -38,6 +38,8 @@ function divClick() {
             newLink.appendChild(newDiv);
             project_content.appendChild(newLink);
         });
+    }).catch(err => {
+        console.log(`Error Adding Div: ${err}`);
     });
 }
 
