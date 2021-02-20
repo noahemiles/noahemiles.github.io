@@ -10,6 +10,11 @@ body {
     background: radial-gradient(rgba(1, 85, 1, 0.164), #23282d);
     overflow: hidden;
     box-sizing: border-box;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
 }
 
 #nav-bar {
