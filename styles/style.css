@@ -2,12 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 html, body {
     font-size: 100%;
     background: radial-gradient(rgba(1, 85, 1, 0.5), #23282d);
-    overflow: hidden;
     box-sizing: border-box;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -48,7 +55,7 @@ html, body {
     padding-top: 30px;
     margin: auto;
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
     border: 10px;
     border-style: solid;
     border-color: wheat;
