@@ -17,12 +17,6 @@ function getRepoUrls() {
     });
 }
 
-function test() {
-    getProjectUrls.then(data => {
-        console.log(data);
-    });
-}
-
 function loadGitDivs(urls) {
     let project_content = document.getElementById('project-content');
     //for repos in git
