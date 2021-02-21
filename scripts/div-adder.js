@@ -1,4 +1,4 @@
-
+/* Fetches git repo name and urls */
 function getRepoUrls() {
     return new Promise((resolve, reject) => {
         let urls = [];
@@ -17,9 +17,9 @@ function getRepoUrls() {
     });
 }
 
-function loadGitDivs(urls) {
+/* Creates divs for each git project */
+function createGitDivs(urls) {
     let project_content = document.getElementById('project-content');
-    //for repos in git
     urls.forEach((nameUrl) => {
         let newDiv = document.createElement('div');
         let newLink = document.createElement('a');
@@ -33,4 +33,5 @@ function loadGitDivs(urls) {
 }
 
 getRepoUrls()
-    .then(urls => loadGitDivs(urls));
+    .then(urls => createGitDivs(urls))
+    .catch(err => console.log(err.message));
