@@ -23,10 +23,13 @@ function createGitDivs(urls) {
     urls.forEach((nameUrl) => {
         let newDiv = document.createElement('div');
         let newLink = document.createElement('a');
+        let newH2 = document.createElement('h2');
         newDiv.id = "project-panel";
-        newDiv.innerHTML = nameUrl[0];
+        newH2.innerHTML = nameUrl[0];
         newDiv.style.minHeight = `${80/urls.length}vh`;
+        
         newLink.href = nameUrl[1];
+        newDiv.appendChild(newH2);
         newLink.appendChild(newDiv);
         project_content.appendChild(newLink);
     });
