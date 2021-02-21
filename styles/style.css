@@ -44,16 +44,12 @@ html, body {
     justify-content: space-evenly;
 }
 
-#project-content {
-    margin: auto;
-    min-height: 90vh;
-}
+#project-content {}
 
 #project-panel {
     display: block;
     text-align: center;
     padding-top: 30px;
-    margin: auto;
     margin-top: 10px;
     width: 100%;
     border: 10px;
