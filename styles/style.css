@@ -1,20 +1,19 @@
-*, *::before,*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
 
-html,
-body {
+html, body {
     font-size: 100%;
-    background: radial-gradient(rgba(1, 85, 1, 0.164), #23282d);
+    background: radial-gradient(rgba(1, 85, 1, 0.5), #23282d);
     overflow: hidden;
     box-sizing: border-box;
-    -moz-user-select: none; 
-    -webkit-user-select: none; 
-    -ms-user-select:none; 
-    user-select:none;
-    -o-user-select:none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
 }
 
 #nav-bar {
@@ -32,26 +31,35 @@ body {
 }
 
 #content {
-    min-height:90vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
 #project-content {
-    min-height:90vh;
+    margin: auto;
+    min-height: 90vh;
 }
 
 #project-panel {
-    min-height:10px;
-    min-width: 50px;
-    border:1px;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    border: 10px;
     border-style: solid;
-    background: green;
+    border-color: wheat;
+    background: rgba(10, 194, 10, 0.15);
 }
 
-#left-content,
-#right-content {
+#project-panel, a {
+    color: whitesmoke;
+    font-size: larger;
+}
+
+#left-content, #right-content {
     width: 20%;
     border: solid;
     border-top: none;
@@ -97,6 +105,7 @@ h1 {
 }
 
 a {
+    font-size: xx-large;
     text-decoration: none;
     color: whitesmoke;
 }

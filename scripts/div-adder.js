@@ -25,6 +25,7 @@ function createGitDivs(urls) {
         let newLink = document.createElement('a');
         newDiv.id = "project-panel";
         newDiv.innerHTML = nameUrl[0];
+        newDiv.style.minHeight = `${80/urls.length}vh`;
         newLink.href = nameUrl[1];
         newLink.appendChild(newDiv);
         project_content.appendChild(newLink);
