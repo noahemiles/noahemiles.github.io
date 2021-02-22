@@ -31,7 +31,7 @@ html, body {
 
 #content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 0fr 2fr 0fr;
 }
 
 #project-panel {
@@ -51,6 +51,8 @@ html, body {
 }
 
 #left-content, #right-content {
+    margin: 0 auto;
+    height: 100%;
     border: solid;
     border-top: none;
     border-bottom: none;
@@ -66,15 +68,29 @@ html, body {
 }
 
 #inner-content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    align-self: center;
     padding: 5%;
 }
 
+#button {
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
 #landing-button {
+    display: flex;
+    align-items: center;
     border-style: solid;
     border-radius: 20px;
     border-width: 5px;
     border-color: black;
-    height: 50px;
+    height: auto;
     background-color: maroon;
     text-decoration: none;
     color: #b3b1a5;
@@ -86,7 +102,6 @@ html, body {
 
 h1 {
     font-size: 1.5em;
-    text-align: center;
     color: whitesmoke;
 }
 
@@ -109,12 +124,20 @@ a {
     color: red;
 }
 
+/*Centered text on image*/
+
 .centered-text {
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: larger;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: xx-large
 }
 
 /* NAV BAR */
@@ -177,17 +200,17 @@ a {
 
 @media screen and (max-width: 600px) {
     .topnav.responsive {
-        position:relative;
+        position: relative;
     }
     .topnav.responsive a.icon {
-        display:block;
-        float:right;
+        display: block;
+        float: right;
         right: 0;
         top: 0;
     }
     .topnav.responsive a {
         top: 0;
-        float:inline-end;
+        float: inline-end;
         display: block;
         text-align: right;
     }
