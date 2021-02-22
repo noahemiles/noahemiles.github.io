@@ -110,6 +110,10 @@ a {
     color: whitesmoke;
 }
 
+#header {
+    text-align: center;
+}
+
 #landing-button {
     text-align: center;
 }
