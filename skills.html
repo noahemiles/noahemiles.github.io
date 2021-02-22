@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noah Miles | Portfolio</title>
@@ -10,34 +11,30 @@
 
 <body>
     <div id="container">
-        <div id="nav-bar">
-            <div class="nav-item">
-                <a href="./index.html">
-                    <h1>Home</h1>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="./project-panels.html">
-                    <h1>Projects</h1>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#">
-                    <h1>Contact Info</h1>
-                </a>
-            </div>
+        <div class="topnav" id="myTopnav">
+            <a href="./index.html">Home</a>
+            <a href="./project-panels.html">Projects</a>
+            <a href="./skills.html" class="active">Skills</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveToggle()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
         <div id="content">
+            <div id="left-content"></div>
             <div id="freddy">
                 <img src="https://cf.ltkcdn.net/feng-shui/images/std/242587-699x450-lucky-cricket.jpg" alt="cricket"
                     style="height:80vh; width:80%; padding-top:10vh;"
                     onclick="var audio = new Audio('./chirp.mp3'); audio.play();">
-                    <div class="centered-text">
-                        PET ME
-                    </div>
+                <div class="centered-text">
+                    PET ME
+                </div>
             </div>
+            <div id="right-content"></div>
         </div>
     </div>
+
+    <script src="./scripts/nav-function.js"></script>
 </body>
 
 </html>

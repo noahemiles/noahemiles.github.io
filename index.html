@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noah Miles | Portfolio</title>
@@ -10,24 +11,16 @@
 
 <body>
     <div id="container">
-        <nav id="nav-bar">
-            <div class="nav-item">
-                <a href="./project-panels.html">
-                    <h1>Projects</h1>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="./skills.html">
-                    <h1>Skills</h1>
-                </a>
-            </div>
-            <div class="nav-item">
-                <a href="#">
-                    <h1>Contact Info</h1>
-                </a>
-            </div>
-        </nav>
-        <main id="content">
+        <div class="topnav" id="myTopnav">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./project-panels.html">Projects</a>
+            <a href="./skills.html">Skills</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveToggle()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div id="content">
             <div id="left-content"></div>
             <div id="inner-content">
                 <h1>WELCOME TO THE THUNDERDOME THAT IS NOAH MILES</h1>
@@ -38,9 +31,10 @@
                 </a>
             </div>
             <div id="right-content"></div>
-        </main>
+        </div>
     </div>
 
+    <script src="./scripts/nav-function.js"></script>
 </body>
 
 </html>
