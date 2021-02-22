@@ -84,6 +84,10 @@ html, body {
     justify-content: center;
 }
 
+#landing-button:hover {
+    background-color: rgb(88, 0, 88);
+}
+
 #landing-button {
     display: flex;
     align-items: center;
@@ -92,7 +96,7 @@ html, body {
     border-width: 5px;
     border-color: black;
     height: auto;
-    background-color: maroon;
+    background-color: rgb(107, 0, 0);
     text-decoration: none;
     color: #b3b1a5;
     /*remove box around autofocus*/
