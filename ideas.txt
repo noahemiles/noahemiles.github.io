@@ -6,3 +6,4 @@ nav bar:
 - skills
 - experience
 - contact info
+#03D3FC
