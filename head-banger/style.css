@@ -13,10 +13,11 @@ body {
 }
 
 header {
-    background: blue;
+    background: darkgray;
     height: 20vh;
     width: 100%;
     border: solid;
     border-color: orange;
+    color: black;
 
 }
