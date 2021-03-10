@@ -1,4 +1,20 @@
-html {
+* {
     margin: 0;
+    padding:0;
     background: gray;
+}
+
+body {
+    height: 100vh;
+    border: solid;
+    border-color: purple;
+}
+
+header {
+    background: blue;
+    height: 20vh;
+    width: 100%;
+    border: solid;
+    border-color: orange;
+
 }
