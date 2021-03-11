@@ -1,23 +1,46 @@
 * {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
-    background: gray;
-    background-size: cover;
-    min-height: 100vh;
-    border: solid;
-    border-color: purple;
+  background: gray;
+  background-size: cover;
+  min-height: 100vh;
+  border: solid;
+  border-color: purple;
 }
 
 header {
-    background: darkgray;
-    height: 20vh;
-    width: 100%;
-    border: solid;
-    border-color: orange;
-    color: black;
+  display: flex;
+  justify-content: space-around;
+  background: lightblue;
+  height: 15vh;
+  width: 100%;
+  border: solid;
+  border-color: orange;
+  color: black;
+}
 
+.main-window {
+  background: pink;
+  min-height: 85vh;
+}
+
+#wall {
+  background: url("./Images/wall-textures/brick-background_0.png");
+  background-size: cover;
+  height: 20vh;
+}
+
+#person {
+  background: url("./Images/player_images/Damian_Behind.svg");
+  background-size: cover;
+  height: 50vh;
+}
+
+.menu {
+  background: blue;
 }
