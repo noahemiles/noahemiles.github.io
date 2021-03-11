@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
   font-family: "Walter Turncoat", cursive;
 }
 
@@ -21,7 +20,7 @@ header {
   display: flex;
   justify-content: space-around;
   background: lightblue;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   border: solid;
   border-color: orange;
@@ -34,7 +33,7 @@ main {
 }
 
 footer {
-  min-height: 20vh;
+  min-height: 15vh;
   background: blue;
 }
 /* ===========
@@ -63,7 +62,7 @@ footer {
   width: 300px;
   left: 2.5rem; /* play around with this */
   position: absolute;
-  bottom: 10vh;
+  bottom: 15vh;
   z-index: 9999;
 }
 
