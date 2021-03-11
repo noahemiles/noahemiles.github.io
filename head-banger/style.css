@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  font-family: "Walter Turncoat", cursive;
 }
 
 body {
@@ -33,12 +34,21 @@ header {
   background: url("./Images/wall-textures/brick-background_0.png");
   background-size: cover;
   height: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 500px;
 }
 
 #person {
   background: url("./Images/player_images/Damian_Behind.svg");
   background-size: cover;
-  height: 50vh;
+  height: 300px;
+  width: 300px;
+  left: 2.5rem; /* play around with this */
+  position: absolute;
+  top: 20.25rem; /* and play around with this */
+  z-index: 9999;
 }
 
 .menu {
