@@ -62,8 +62,8 @@ footer {
   background-size: cover;
   height: 300px;
   width: 300px;
-  left: 2.5rem; /* play around with this */
   position: absolute;
+  left: 6vh;
   bottom: 15vh;
   z-index: 9999;
 }
