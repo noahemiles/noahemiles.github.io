@@ -6,6 +6,9 @@
   font-family: "Walter Turncoat", cursive;
 }
 
+/* ===========
+
+   =========== */
 body {
   background: gray;
   background-size: cover;
@@ -25,10 +28,22 @@ header {
   color: black;
 }
 
-.main-window {
+main {
   background: pink;
-  min-height: 85vh;
+  min-height: 75vh;
 }
+
+footer {
+  min-height: 20vh;
+  background: blue;
+}
+/* ===========
+
+   =========== */
+
+/* ===========
+
+   =========== */
 
 #wall {
   background: url("./Images/wall-textures/brick-background_0.png");
@@ -36,6 +51,7 @@ header {
   height: 20vh;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0px;
   position: relative;
   padding-top: 500px;
 }
@@ -47,14 +63,10 @@ header {
   width: 300px;
   left: 2.5rem; /* play around with this */
   position: absolute;
-  top: 20.25rem; /* and play around with this */
+  bottom: 10vh;
   z-index: 9999;
 }
 
 #person:active {
-    top: 20rem;
-}
-
-.menu {
-  background: blue;
+  top: 20rem;
 }
