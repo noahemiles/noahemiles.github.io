@@ -30,6 +30,7 @@ header {
 main {
   background: black; /* Maybe this is a road or something */
   min-height: 75vh;
+  z-index: 0;
 }
 
 footer {
@@ -53,6 +54,7 @@ footer {
   margin-bottom: 0px;
   position: relative;
   padding-top: 500px;
+  z-index: 0;
 }
 
 #person {
@@ -66,6 +68,6 @@ footer {
   z-index: 9999;
 }
 
-#person:active {
+main:active #person {
   top: 20rem;
 }
