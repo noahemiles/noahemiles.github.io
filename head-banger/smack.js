@@ -1,3 +1,4 @@
+document.getElementById("counter").innerHTML = localStorage.getItem("counter") || 0;
 function smack() {
     var count = localStorage.getItem("counter") || 0;
     var counter = document.getElementById("counter") ;
