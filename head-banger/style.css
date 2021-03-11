@@ -69,5 +69,5 @@ footer {
 }
 
 main:active #person {
-  top: 20rem;
+  bottom: 20rem;
 }
