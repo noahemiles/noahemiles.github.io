@@ -51,6 +51,10 @@ header {
   z-index: 9999;
 }
 
+#person:active {
+    top: 20rem;
+}
+
 .menu {
   background: blue;
 }
