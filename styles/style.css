@@ -1,3 +1,8 @@
+/*
+================================
+Main Elements
+================================
+*/
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -23,6 +28,11 @@ html, body {
     -o-user-select: none;
 }
 
+/*
+================================
+Content
+================================
+*/
 #container {
     display: grid;
     height: 100vh;
@@ -76,12 +86,41 @@ html, body {
     padding: 5%;
 }
 
+/*
+================================
+Tags
+================================
+*/
+h1 {
+    font-size: 1.5em;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#header {
+    text-align: center;
+}
+
+
+/*
+================================
+BUTTONS
+================================
+*/
 #button {
     margin: 0 auto;
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#landing-button {
+    text-align: center;
 }
 
 #landing-button:hover {
@@ -99,41 +138,22 @@ html, body {
     background-color: rgb(107, 0, 0);
     text-decoration: none;
     color: #b3b1a5;
+    width: 135%;
     /*remove box around autofocus*/
     outline: none;
     margin-top: 50px;
     padding: 10px;
 }
 
-h1 {
-    font-size: 1.5em;
-    color: whitesmoke;
-}
-
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-#header {
-    text-align: center;
-}
-
-#landing-button {
-    text-align: center;
-}
-
 #landing-button, h3 {
     color: whitesmoke;
 }
 
-#freddy {
-    position: relative;
-    text-align: center;
-    color: red;
-}
-
-/*Centered text on image*/
+/*
+================================
+Centered Text On Image
+================================
+*/
 
 .centered-text {
     position: absolute;
@@ -149,7 +169,11 @@ p {
     font-size: xx-large
 }
 
-/* NAV BAR */
+/*
+================================
+Nav Bar
+================================
+*/
 
 /* Add a black background color to the top navigation */
 
@@ -191,7 +215,11 @@ p {
     display: none;
 }
 
-/* MOBILE */
+/*
+================================
+Mobile Nav Bar
+================================
+*/
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 
