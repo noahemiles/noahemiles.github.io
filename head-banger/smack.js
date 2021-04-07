@@ -11,7 +11,7 @@ document.getElementById("smack_count").innerHTML =
   smack_count > 999
     ? Number(smack_count).toExponential(smack_count.toString().length - 1)
     : smack_count;
-//Initial set of Smack
+//Initial set of Brick
 document.getElementById("brick_count").innerHTML =
   localStorage.getItem("brick_count") || 0;
 console.log(
