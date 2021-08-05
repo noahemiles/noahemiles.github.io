@@ -25,6 +25,13 @@ body {
 #inner-content {
   border: solid;
   min-width: calc(100% / 3);
+  text-align: center;
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 10vh;
 }
 
 #right-content {
