@@ -13,6 +13,7 @@ function addNavDivs() {
   const links = ["index", "Projects", "Skills", "About"];
   links.forEach((linkText) => {
     let link = document.createElement("a");
+    link.className = "nav-item";
     link.innerHTML = linkText == "index" ? "Home" : linkText;
     link.href = linkText + ".html";
     nav.appendChild(link);
