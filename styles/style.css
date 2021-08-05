@@ -34,6 +34,7 @@ body {
   font-weight: bold;
   padding-top: 30vh;
   color: whitesmoke;
+  user-select: none;
 }
 
 #content {
