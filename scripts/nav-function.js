@@ -9,7 +9,7 @@ function responsiveToggle() {
 }
 
 function addNavDivs() {
-  let nav = document.getElementById("myTopnav");
+  let nav = document.getElementById("nav");
   const links = ["index", "Projects", "Skills", "About"];
   links.forEach((linkText) => {
     let link = document.createElement("a");
