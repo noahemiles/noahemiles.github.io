@@ -12,6 +12,7 @@ body {
   background-size: cover;
   background-position: center top;
   font-family: "Mountains of Christmas", cursive;
+  font-weight: bolder;
 }
 
 .countdown-container {
@@ -32,12 +33,16 @@ body {
 }
 
 .number {
-  padding: 30px;
-  font-size: xx-large;
+  padding: 30px 0 0 25px;
+  font-size: 4rem;
 }
 
 #title {
   padding: 30px 0 20px;
-  font-weight: bolder;
-  font-size: 90px;
+  font-size: 5rem;
+}
+
+.time-text {
+  font-size: 2rem;
+  font-weight: bold;
 }
