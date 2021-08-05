@@ -31,7 +31,7 @@ function addSkillListItems() {
   let skillList = document.getElementById("skill-list");
   skills.forEach((el) => {
     let li = document.createElement("li");
-    li.className = "skill";
+    li.className = "list-item";
     li.innerHTML = el;
     skillList.appendChild(li);
   });
