@@ -19,7 +19,7 @@ function getRepoUrls() {
 
 /* Creates divs for each git project */
 function createGitDivs(urls) {
-    let project_content = document.getElementById('project-content');
+    let project_content = document.getElementById('inner-content');
     urls.forEach((nameUrl) => {
         let newDiv = document.createElement('div');
         let newLink = document.createElement('a');
