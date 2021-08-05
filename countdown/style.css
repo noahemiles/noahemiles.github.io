@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1512389098783-66b81f86e199?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=788&q=80");
+  background-size: cover;
+  background-position: center top;
+  font-family: "Mountains of Christmas", cursive;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.container {
+  max-height: 100vh;
+  min-width: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+}
+
+.number {
+  padding: 30px;
+  font-size: xx-large;
+}
+
+#title {
+  padding: 30px 0 20px;
+  font-weight: bolder;
+  font-size: 90px;
+}
