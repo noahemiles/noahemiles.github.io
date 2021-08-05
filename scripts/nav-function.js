@@ -20,4 +20,32 @@ function addNavDivs() {
   });
 }
 
-addNavDivs();
+function addSkillListItems() {
+  const skills = [
+    "Java",
+    "Python",
+    "Javascript",
+    "Web Design",
+    "Chrome Extension Development",
+  ];
+  let skillList = document.getElementById("skill-list");
+  skills.forEach((el) => {
+    let li = document.createElement("li");
+    li.className = "skill";
+    li.innerHTML = el;
+    skillList.appendChild(li);
+  });
+}
+
+function init() {
+  switch (window.location.pathname) {
+    case "/Skills.html":
+      addNavDivs();
+      addSkillListItems();
+      break;
+    default:
+      addNavDivs();
+  }
+}
+
+init();
