@@ -62,8 +62,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: solid;
   min-height: 94vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #left-content {
