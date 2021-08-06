@@ -7,7 +7,7 @@ const numbers = getHtmlElements();
 function setCounters() {
   const date = new Date();
   if (date.getMonth() < 11 || (date.getMonth() == 11 && date.getDay() < 25)) {
-    numbers[0].innerHTML = 10 - date.getMonth(); //months are 0 based
+    numbers[0].innerHTML = 11 - date.getMonth(); //months are 0 based
     numbers[1].innerHTML = 23 - date.getDay();
     numbers[2].innerHTML = 23 - date.getHours();
     numbers[3].innerHTML = 59 - date.getMinutes();

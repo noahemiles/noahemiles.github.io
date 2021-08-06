@@ -84,14 +84,14 @@ body {
 }
 
 #left-content {
-  min-width: calc(100% / 3);
+  min-width: calc(100vh / 3);
 }
 
 #inner-content {
-  min-width: calc(100% / 3);
+  min-width: calc(100vh / 3);
   text-align: center;
 }
 
 #right-content {
-  min-width: calc(100% / 3);
+  min-width: calc(100vh / 3);
 }
