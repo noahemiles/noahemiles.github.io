@@ -28,7 +28,7 @@ function createGitDivs(urls) {
     newDiv.className = "project-div";
     newLink.setAttribute("target", "_blank");
     newLink.href = nameUrl[1];
-    newLink.className = "list-item";
+    newLink.className = "text";
     newDiv.appendChild(newH2);
     newLink.appendChild(newDiv);
     project_content.appendChild(newLink);

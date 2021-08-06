@@ -13,7 +13,7 @@ function addNavDivs() {
   const links = ["index", "Projects", "Skills", "About"];
   links.forEach((linkText) => {
     let link = document.createElement("a");
-    link.className = "nav-item";
+    link.className = "nav-item text";
     link.innerHTML = linkText == "index" ? "Home" : linkText;
     link.href = linkText + ".html";
     nav.appendChild(link);
@@ -31,7 +31,7 @@ function addSkillListItems() {
   let skillList = document.getElementById("skill-list");
   skills.forEach((el) => {
     let li = document.createElement("li");
-    li.className = "list-item";
+    li.className = "text";
     li.innerHTML = el;
     skillList.appendChild(li);
   });
