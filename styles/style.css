@@ -16,7 +16,7 @@ body {
   justify-content: space-around;
   align-items: center;
   min-height: 5vh;
-  background-color: #26a8d4;
+  background-color: #2896bb;
 }
 
 .nav-item {
@@ -50,6 +50,20 @@ body {
   padding-top: 10vh;
 }
 
+.project-div {
+  border: solid;
+  border-width: 1px;
+  padding: 30px;
+}
+
+.project-div:hover {
+  background-color: rgb(45, 59, 59);
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
+
 .list-item {
   list-style: none;
   line-height: 2rem;
@@ -57,6 +71,7 @@ body {
   font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
+  user-select: none;
 }
 
 #project-content {
