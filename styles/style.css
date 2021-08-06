@@ -1,254 +1,116 @@
-/*
-================================
-Main Elements
-================================
-*/
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-html::-webkit-scrollbar {
-    display: none;
+body {
+  background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+  min-width: 100vh;
+  min-height: 100vh;
 }
 
-html, body {
-    font-size: 100%;
-    background: radial-gradient(rgba(1, 85, 1, 0.5), #23282d);
-    box-sizing: border-box;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -o-user-select: none;
+/*  Nav  */
+#nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 5vh;
+  background-color: rgb(45, 59, 59);
 }
 
-/*
-================================
-Content
-================================
-*/
-#container {
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto 1fr;
+.nav-item {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #f5f5f5;
 }
+
+.nav-item:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 0px 5px white;
+}
+
+/*  end nav  */
 
 #content {
-    display: grid;
-    grid-template-columns: 0fr 2fr 0fr;
+  display: flex;
+  min-height: 95vh;
+  justify-content: center;
 }
 
-#project-panel {
-    display: block;
-    text-align: center;
-    padding-top: 30px;
-    margin-top: 10px;
-    width: 100%;
-    border: 10px;
-    border-style: solid;
-    border-color: wheat;
-    background: rgba(10, 194, 10, 0.15);
+#title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 15vh;
+  color: whitesmoke;
+  text-shadow:
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
+  user-select: none;
+  text-align: center;
 }
 
-#project-panel, a {
-    color: whitesmoke;
+#skill-list-div {
+  padding-top: 5vh;
 }
 
-#left-content, #right-content {
-    margin: 0 auto;
-    height: 100%;
-    border: solid;
-    border-top: none;
-    border-bottom: none;
-    border-width: 1px;
+#skill-list li{
+  text-align: left;
+}
+
+.project-div {
+  border: solid;
+  border-width: 1px;
+  padding: 30px;
+}
+
+.project-div:hover {
+  background-color: rgb(45, 59, 59);
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+}
+
+.list-item {
+  list-style:disc;
+  line-height: 3rem;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  text-shadow:
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
+}
+
+#project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 94vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #left-content {
-    border-left: none;
-}
-
-#right-content {
-    border-right: none;
+  min-width: calc(100% / 3);
 }
 
 #inner-content {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    align-self: center;
-    padding: 5%;
+  min-width: calc(100% / 3);
+  background-color: #1a263ea1;
 }
 
-/*
-================================
-Tags
-================================
-*/
-h1 {
-    font-size: 1.5em;
-    color: whitesmoke;
+#inner-index {
+  min-width: calc(100% / 3);
 }
 
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-#header {
-    text-align: center;
-}
-
-
-/*
-================================
-BUTTONS
-================================
-*/
-#button {
-    margin: 0 auto;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#landing-button {
-    text-align: center;
-}
-
-#landing-button:hover {
-    background-color: rgb(88, 0, 88);
-}
-
-#landing-button {
-    display: flex;
-    align-items: center;
-    border-style: solid;
-    border-radius: 20px;
-    border-width: 5px;
-    border-color: black;
-    height: auto;
-    background-color: rgb(107, 0, 0);
-    text-decoration: none;
-    color: #b3b1a5;
-    width: 135%;
-    /*remove box around autofocus*/
-    outline: none;
-    margin-top: 50px;
-    padding: 10px;
-}
-
-#landing-button, h3 {
-    color: whitesmoke;
-}
-
-/*
-================================
-Centered Text On Image
-================================
-*/
-
-.centered-text {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: larger;
-}
-
-p {
-    text-align: center;
-    color: white;
-    font-size: xx-large
-}
-
-/*
-================================
-Nav Bar
-================================
-*/
-
-/* Add a black background color to the top navigation */
-
-.topnav {
-    z-index: 9999;
-    background-color: #333;
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Change the color of links on hover */
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Add an active class to highlight the current page */
-
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-
-.topnav .icon {
-    display: none;
-}
-
-/*
-================================
-Mobile Nav Bar
-================================
-*/
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-
-@media screen and (max-width: 600px) {
-    .topnav a {
-        display: none;
-    }
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-
-@media screen and (max-width: 600px) {
-    .topnav.responsive {
-        position: relative;
-    }
-    .topnav.responsive a.icon {
-        display: block;
-        float: right;
-        right: 0;
-        top: 0;
-    }
-    .topnav.responsive a {
-        top: 0;
-        float: inline-end;
-        display: block;
-        text-align: right;
-    }
+#right-content {
+  min-width: calc(100% / 3);
 }
