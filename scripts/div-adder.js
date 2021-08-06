@@ -25,9 +25,7 @@ function createGitDivs(urls) {
     let newLink = document.createElement("a");
     let newH2 = document.createElement("h2");
     newH2.innerHTML = nameUrl[0];
-    newDiv.style.border = "solid";
-    newDiv.style.borderWidth = "1px";
-    newDiv.style.padding = "30px";
+    newDiv.className = "project-div";
     newLink.setAttribute("target", "_blank");
     newLink.href = nameUrl[1];
     newLink.className = "list-item";
