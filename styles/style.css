@@ -41,13 +41,23 @@ body {
 #title {
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 30vh;
+  padding-top: 15vh;
   color: whitesmoke;
+  text-shadow:
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
   user-select: none;
+  text-align: center;
 }
 
 #skill-list-div {
-  padding-top: 10vh;
+  padding-top: 5vh;
+}
+
+#skill-list li{
+  text-align: left;
 }
 
 .project-div {
@@ -65,13 +75,18 @@ body {
 }
 
 .list-item {
-  list-style: none;
-  line-height: 2rem;
+  list-style:disc;
+  line-height: 3rem;
   color: whitesmoke;
   font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
   user-select: none;
+  text-shadow:
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
 }
 
 #project-content {
@@ -84,14 +99,18 @@ body {
 }
 
 #left-content {
-  min-width: calc(100vh / 3);
+  min-width: calc(100% / 3);
 }
 
 #inner-content {
-  min-width: calc(100vh / 3);
-  text-align: center;
+  min-width: calc(100% / 3);
+  background-color: #1a263ea1;
+}
+
+#inner-index {
+  min-width: calc(100% / 3);
 }
 
 #right-content {
-  min-width: calc(100vh / 3);
+  min-width: calc(100% / 3);
 }
