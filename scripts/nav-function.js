@@ -10,7 +10,7 @@ function responsiveToggle() {
 
 function addNavDivs() {
   let nav = document.getElementById("nav");
-  const links = ["index", "Projects", "Skills", "About"];
+  const links = ["index", "Projects", "Skills", "References", "About"];
   links.forEach((linkText) => {
     let link = document.createElement("a");
     link.className = "nav-item text";
@@ -37,13 +37,35 @@ function addSkillListItems() {
   });
 }
 
+function addRefListItems() {
+  const refs = [
+    "Bill",
+    "Bob",
+    "Joe",
+    "Steve",
+    "Mike",
+    "Bruno",
+  ];
+  let refList = document.getElementById("skill-list");
+  refs.forEach((el) => {
+    let li = document.createElement("li");
+    li.className = "text";
+    li.innerHTML = el;
+    refList.appendChild(li);
+  });
+}
+
 function init() {
   switch (window.location.pathname) {
     case "/Skills.html":
       addNavDivs();
       addSkillListItems();
       break;
-    default:
+      case "/References.html":
+        addNavDivs();
+        addRefListItems();
+        break;
+      default:
       addNavDivs();
   }
 }
