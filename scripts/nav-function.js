@@ -10,7 +10,7 @@ function responsiveToggle() {
 
 function addNavDivs() {
   let nav = document.getElementById("nav");
-  const links = ["index", "Projects", "Skills", "References", "About"];
+  const links = ["index", "Projects", "Skills", "References", "Privacy", "About"];
   links.forEach((linkText) => {
     let link = document.createElement("a");
     link.className = "nav-item text";
@@ -55,6 +55,13 @@ function addRefListItems() {
   });
 }
 
+function addPrivacyPolicy() {
+    const privacyPolicy = import("./privacy.txt");
+    let privacy = document.getElementById("privacy");
+    privacy.innerHTML = privacyPolicy;
+    li.className = "text";
+}
+
 function init() {
   switch (window.location.pathname) {
     case "/Skills.html":
@@ -65,6 +72,8 @@ function init() {
         addNavDivs();
         addRefListItems();
         break;
+      case "/Privacy.html":
+	addPrivacyPolicy();
       default:
       addNavDivs();
   }
