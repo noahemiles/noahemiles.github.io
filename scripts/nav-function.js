@@ -1,16 +1,13 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function responsiveToggle() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 function addNavDivs() {
   let nav = document.getElementById("nav");
-  const links = ["index", "Projects", "Skills", "References", "Privacy", "About"];
+  const links = [
+    "index",
+    "Projects",
+    "Skills",
+    "References",
+    "Privacy",
+    "About",
+  ];
   links.forEach((linkText) => {
     let link = document.createElement("a");
     link.className = "nav-item text";
@@ -38,14 +35,7 @@ function addSkillListItems() {
 }
 
 function addRefListItems() {
-  const refs = [
-    "Bill",
-    "Bob",
-    "Joe",
-    "Steve",
-    "Mike",
-    "Bruno",
-  ];
+  const refs = ["Bill", "Bob", "Joe", "Steve", "Mike", "Bruno"];
   let refList = document.getElementById("skill-list");
   refs.forEach((el) => {
     let li = document.createElement("li");
@@ -56,10 +46,24 @@ function addRefListItems() {
 }
 
 function addPrivacyPolicy() {
-    const privacyPolicy = import("./privacy.txt");
-    let privacy = document.getElementById("privacy");
-    privacy.innerHTML = privacyPolicy;
-    li.className = "text";
+  console.log("Privacy:", getPrivacyPolicy());
+  let privacy = document.getElementById("policy");
+  privacy.innerHTML = getPrivacyPolicy() || "Privacy Policy<br><br> -\tUser's email is collected and stored locally only.";
+  privacy.className = "text";
+}
+
+function getPrivacyPolicy(){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://noahemiles.github.io/privacy.txt', true);
+  request.send(null);
+  request.onreadystatechange = function () {
+      if (request.readyState === 4 && request.status === 200) {
+          var type = request.getResponseHeader('Content-Type');
+          if (type.indexOf("text") !== 1) {
+              return request.responseText;
+          }
+      }
+  }
 }
 
 function init() {
@@ -68,13 +72,14 @@ function init() {
       addNavDivs();
       addSkillListItems();
       break;
-      case "/References.html":
-        addNavDivs();
-        addRefListItems();
-        break;
-      case "/Privacy.html":
-	addPrivacyPolicy();
-      default:
+    case "/References.html":
+      addNavDivs();
+      addRefListItems();
+      break;
+    case "/Privacy.html":
+      addPrivacyPolicy();
+      break;
+    default:
       addNavDivs();
   }
 }
