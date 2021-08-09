@@ -1,8 +1,0 @@
-utm_source for tailored landing pages
-
-project tiles added automagically from git with titles and random color background tiles?
-
-nav bar:
-- skills
-- experience
-- contact info
