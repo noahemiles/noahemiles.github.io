@@ -45,27 +45,6 @@ function addRefListItems() {
   });
 }
 
-function addPrivacyPolicy() {
-  console.log("Privacy:", getPrivacyPolicy());
-  let privacy = document.getElementById("policy");
-  privacy.innerHTML = getPrivacyPolicy() || "Privacy Policy<br><br> -\tUser's email is collected and stored locally only.";
-  privacy.className = "text";
-}
-
-function getPrivacyPolicy(){
-  var request = new XMLHttpRequest();
-  request.open('GET', 'http://noahemiles.github.io/privacy.txt', true);
-  request.send(null);
-  request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status === 200) {
-          var type = request.getResponseHeader('Content-Type');
-          if (type.indexOf("text") !== 1) {
-              return request.responseText;
-          }
-      }
-  }
-}
-
 function init() {
   switch (window.location.pathname) {
     case "/Skills.html":
@@ -77,10 +56,10 @@ function init() {
       addRefListItems();
       break;
     case "/Privacy.html":
-      addPrivacyPolicy();
       break;
     default:
       addNavDivs();
+      break;
   }
 }
 
