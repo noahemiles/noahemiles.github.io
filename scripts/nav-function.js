@@ -19,11 +19,11 @@ function addNavDivs() {
 
 function addSkillListItems() {
   const skills = [
-    "Java",
-    "Python",
     "Javascript",
-    "Web Design",
     "Chrome Extension Development",
+    "Python",
+    "Web Design",
+    "Java",
   ];
   let skillList = document.getElementById("skill-list");
   skills.forEach((el) => {
