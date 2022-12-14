@@ -22,7 +22,7 @@ function playAudio(fileName) {
 
 function handleListeners() {
   document.getElementsByTagName("main")[0].addEventListener("click", (e) => {
-    smack(50);
+    smack(1);
   });
 }
 
