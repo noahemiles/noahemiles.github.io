@@ -60,19 +60,73 @@ footer {
   bottom: 0;
 }
 
+main:active #person {
+  transform: translate(30px, -300px);
+}
+
 #wall {
   background: url("./Images/wall-textures/brick-background_0.png");
   background-size: cover;
   height: 70%;
 }
 
-#road {
-  height: 10%;
-  background-color: black;
-  border-top: 20px dashed yellow;
-  margin-top: 20%;
+
+@media (min-width:320px) {
+
+  /* smartphones, iPhone, portrait 480x320 phones */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 25%;
+  }
 }
 
-main:active #person {
-  transform: translate(30px, -350px);
+@media (min-width:481px) {
+
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 25%;
+  }
+}
+
+@media (min-width:641px) {
+
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 19%;
+  }
+}
+
+@media (min-width:961px) {
+
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 7%;
+  }
+}
+
+@media (min-width:1025px) {
+
+  /* big landscape tablets, laptops, and desktops */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 5%;
+  }
+}
+
+@media (min-width:1281px) {
+
+  /* hi-res laptops and desktops */
+  #road {
+    height: 0;
+    border-top: 20px dashed yellow;
+    margin-top: 5%;
+  }
 }
