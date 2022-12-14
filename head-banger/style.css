@@ -8,66 +8,71 @@
 /* ===========
 
    =========== */
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   background: gray;
-  background-size: cover;
-  min-height: 100vh;
-  border: solid;
-  border-color: purple;
+  border: 5px solid purple;
 }
 
 header {
+  height: 10%;
+  width: 100%;
+  background: lightblue;
+  border: 5px solid orange;
   display: flex;
   justify-content: space-around;
-  background: lightblue;
-  height: 10vh;
-  width: 100%;
-  border: solid;
-  border-color: orange;
   color: black;
 }
 
 main {
-  background: black; /* Maybe this is a road or something */
-  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: black;
+  /* Maybe this is a road or something */
+  height: 85%;
+  width: 100%;
   z-index: 0;
 }
 
 footer {
-  min-height: 15vh;
-  background: blue;
+  min-height: 5%;
+  background: gray;
 }
-/* ===========
-
-   =========== */
 
 /* ===========
 
    =========== */
+
+/* ===========
+
+   =========== */
+#person {
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+}
 
 #wall {
   background: url("./Images/wall-textures/brick-background_0.png");
   background-size: cover;
-  height: 20vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-  position: relative;
-  padding-top: 500px;
-  z-index: 0;
+  height: 70%;
 }
 
-#person {
-  background: url("./Images/player_images/Damian_Behind.svg");
-  background-size: cover;
-  height: 300px;
-  width: 300px;
-  position: absolute;
-  left: 6vh;
-  bottom: 15vh;
-  z-index: 9999;
+#road {
+  height: 10%;
+  background-color: black;
+  border-top: 20px dashed yellow;
+  margin-top: 20%;
 }
 
 main:active #person {
-  bottom: 20rem;
+  transform: translate(30px, -350px);
 }
