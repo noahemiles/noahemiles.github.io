@@ -1,17 +1,17 @@
 function app() {
     updateUser();
     let divs = document.querySelectorAll("div");
-    for (let i = 0; i < divs.length - 1; i++) {//=
-        divs[i].style.backgroundColor = turtleColors[divs[i].className];
+    for (let i = 0; i < divs.length - 1; i++) {
+        divs[i].style.backgroundColor = turtleColors.divs[i].className;
     }
     localStorage.setItem('seen', 'true');
 }
 
 const turtleColors = {
-    raphael: "red",
-    michelangelo: "orange",
     leonardo: "blue",
     donatello: "purple",
+    raphael: "red",
+    michelangelo: "orange",
     "master-splinter": "gray"
 };
 
