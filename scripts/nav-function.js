@@ -35,7 +35,7 @@ function addSkillListItems() {
 }
 
 function addRefListItems() {
-  const refs = ["Bill", "Bob", "Joe", "Steve", "Mike", "Bruno"];
+  const refs = ["Bill", "Bob", "Ruby", "Joe", "Steve", "Mike", "Bruno"];
   let refList = document.getElementById("skill-list");
   refs.forEach((el) => {
     let li = document.createElement("li");
