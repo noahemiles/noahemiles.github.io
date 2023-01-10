@@ -1,0 +1,325 @@
+<html>
+
+<head>
+    <title>Moose</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: aqua;
+        }
+        
+        div.centered {
+            margin: auto;
+            height: 90%;
+            width: 80%;
+            display: flex;
+            background-color: seagreen;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 24px;
+        }
+        
+        textarea {
+            resize: none;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        textarea::-webkit-scrollbar {
+            width: 1em;
+        }
+        
+        textarea::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+        }
+        
+        textarea::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+            border-radius: 24px;
+        }
+        
+        .inputs {
+            border-radius: 17px;
+            padding: 12px 20px;
+            background-color: #f8f8f8;
+            width: 100%;
+            font-size: 50px;
+        }
+        
+        .text-center {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 70px;
+            margin: -10px 0 0 0;
+            display: block;
+            text-align: center;
+        }
+        
+        .item.buttons {
+            display: flex;
+            flex-direction: row;
+            min-height: 8%;
+        }
+        
+        .inputs.buttons {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        
+        .inputs.buttons:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="prompt-div" class="centered">
+        <label class="text-center" for="inputText">Moose</label>
+        <div class="item">
+            <textarea id="inputText" name="inputText" rows="5" class="inputs" required></textarea>
+        </div>
+        <div class="item">
+            <input id="rotText" type="text" class="inputs" placeholder="Offset">
+        </div>
+        <div class="item buttons">
+            <input id="encodeButton" type="button" value="Encode" class="inputs buttons">
+            <input id="decodeButton" type="button" value="Decode" class="inputs buttons">
+        </div>
+        <div class="item buttons">
+            <input id="copyButton" type="button" value="Copy" class="inputs buttons">
+            <input id="pasteButton" type="button" value="Pasta" class="inputs buttons">
+            <input id="clearButton" type="button" value="Clear" class="inputs buttons">
+        </div>
+    </div>
+</body>
+
+
+<script>
+    const m2a = {
+        '.-': 'a',
+        '-...': 'b',
+        '-.-.': 'c',
+        '-..': 'd',
+        '.': 'e',
+        '..-.': 'f',
+        '--.': 'g',
+        '....': 'h',
+        '..': 'i',
+        '.---': 'j',
+        '-.-': 'k',
+        '.-..': 'l',
+        '--': 'm',
+        '-.': 'n',
+        '---': 'o',
+        '.--.': 'p',
+        '--.-': 'q',
+        '.-.': 'r',
+        '...': 's',
+        '-': 't',
+        '..-': 'u',
+        '...-': 'v',
+        '.--': 'w',
+        '-..-': 'x',
+        '-.--': 'y',
+        '--..': 'z',
+        '.----': '1',
+        '..---': '2',
+        '...--': '3',
+        '....-': '4',
+        '.....': '5',
+        '-....': '6',
+        '--...': '7',
+        '---..': '8',
+        '----.': '9',
+        '-----': '0',
+        '..--..': '?',
+        '--..--': ',',
+        '---...': ':',
+        '.-.-.-': '.',
+        '.----.': "'",
+        '.-..-.': '"',
+        '-.-.--': '!',
+    };
+    const a2m = {
+        'a': '.-',
+        'b': '-...',
+        'c': '-.-.',
+        'd': '-..',
+        'e': '.',
+        'f': '..-.',
+        'g': '--.',
+        'h': '....',
+        'i': '..',
+        'j': '.---',
+        'k': '-.-',
+        'l': '.-..',
+        'm': '--',
+        'n': '-.',
+        'o': '---',
+        'p': '.--.',
+        'q': '--.-',
+        'r': '.-.',
+        's': '...',
+        't': '-',
+        'u': '..-',
+        'v': '...-',
+        'w': '.--',
+        'x': '-..-',
+        'y': '-.--',
+        'z': '--..',
+        '1': '.----',
+        '2': '..---',
+        '3': '...--',
+        '4': '....-',
+        '5': '.....',
+        '6': '-....',
+        '7': '--...',
+        '8': '---..',
+        '9': '----.',
+        '0': '-----',
+        '?': '..--..',
+        ',': '--..--',
+        ':': '---...',
+        '.': '.-.-.-',
+        "'": '.----.',
+        '"': '.-..-.',
+        '!': '-.-.--',
+    };
+
+    const rot = function(string, n = 13) {
+        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var regexLowercase = /[a-z]/;
+        var regexUppercase = /[A-Z]/;
+        n = Number(n);
+        string = String(string);
+        if (n == 0) {
+            return string;
+        }
+        if (n < 0) { // decode instead of encode
+            n += 26;
+        }
+        var length = string.length;
+        var index = -1;
+        var result = '';
+        var character;
+        var currentPosition;
+        var shiftedPosition;
+        while (++index < length) {
+            character = string.charAt(index);
+            if (regexLowercase.test(character)) {
+                currentPosition = lowercase.indexOf(character);
+                shiftedPosition = (currentPosition + n) % 26;
+                result += lowercase.charAt(shiftedPosition);
+            } else if (regexUppercase.test(character)) {
+                currentPosition = uppercase.indexOf(character);
+                shiftedPosition = (currentPosition + n) % 26;
+                result += uppercase.charAt(shiftedPosition);
+            } else {
+                result += character;
+            }
+        }
+        return result;
+    }
+
+    function decodeMorse(morseCode) {
+        return morseCode
+            .split('/')
+            .map(
+                a => a
+                .split(' ')
+                .map(
+                    b => m2a[b] ? m2a[b] : " "
+                ).join('')
+            ).join(' ');
+    }
+
+    function encodeMorse(morseCode) {
+        return morseCode
+            .split(' ')
+            .map(
+                a => a
+                .split('')
+                .map(
+                    b => a2m[b] ? a2m[b] : "[]"
+                ).join(' ')
+            ).join('/');
+    }
+
+
+    function commandInput(flag, input, n) {
+        input = input.toLowerCase();
+        let out = "";
+        if (flag == "e" || flag == "encode") {
+            if (n) {
+                out = encodeMorse(rot(input, n));
+            } else {
+                out = encodeMorse(input);
+            }
+        } else if (flag == "d" || flag == "decode") {
+            if (n) {
+                out = rot(decodeMorse(input), -n);
+            } else {
+                out = decodeMorse(input);
+            }
+        } else {
+            console.log("Invalid flag. Use -e || -d");
+        }
+        return out;
+    }
+    document.getElementById("encodeButton").addEventListener('click', evt => {
+        handleText(evt.target.value.toLowerCase());
+    });
+
+    document.getElementById("decodeButton").addEventListener('click', evt => {
+        handleText(evt.target.value.toLowerCase());
+    });
+
+    document.getElementById("clearButton").addEventListener('click', evt => {
+        let textArea = document.getElementById("inputText");
+        textArea.value = "";
+        textArea.focus();
+    });
+
+    document.getElementById("copyButton").addEventListener('click', evt => {
+        let textArea = document.getElementById("inputText");
+        textArea.select();
+        document.execCommand("copy");
+    });
+
+    document.getElementById("pasteButton").addEventListener('click', evt => {
+        let textArea = document.getElementById("inputText");
+        textArea.focus();
+        navigator.clipboard.readText().then((clipText) =>
+            textArea.value = clipText);
+    });
+
+    function handleText(direction) {
+        let textArea = document.getElementById("inputText");
+        let textValue = textArea.value;
+        let rotN = document.getElementById("rotText").value;
+        if (textValue.length > 0) {
+            console.log("QA>", [textValue, direction, rotN]);
+            textArea.value = commandInput(direction, textValue, rotN);
+        } else {
+            alert("Invalid");
+            console.log("QA>", [textValue, direction, rotN]);
+        }
+    }
+</script>
+
+</html>
