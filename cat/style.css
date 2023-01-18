@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    overflow: hidden;   
+}
+
+body
+{
+    margin: 0;
+}
+
+html, body
+{
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.container {
+    z-index: 2;
+    border: 10px solid orangered;
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30%;
+    align-items: space-between;
+    height: 100vh;
+    order: 1;
+}
+
+#prizePointer {
+    padding-left: 13%;
+    z-index: 1;
+    transform: rotate(-90deg);
+    order: 2;
+    flex:0.60;
+    user-select: none;
+
+}
+
+.form {
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+    z-index: 2;
+    border: 10px solid black;
+    display: flex;
+    justify-content: center;
+    background-color: #DB0003;
+    user-select: none;
+}
+
+#new-stu {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#main-title {
+    position: absolute;
+    bottom: 35%;
+    color: red;
+    left: 5%;
+    font-size: 100px;
+    z-index: 3;
+    font-family: 'Creepster', cursive;
+    user-select: none;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Creepster', cursive;
+    font-size: 25px;
+} 
+
