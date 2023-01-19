@@ -68,7 +68,9 @@ function alertPrize() {
     let winningSegment = theWheel.getIndicatedSegment();
 
     // Basic alert of the segment text which is the prize name.
-    alert("You are the chosen one, " + winningSegment.text + "!");
+    if (winningSegment.text.length > 0) {
+        alert("You are the chosen one, " + winningSegment.text + "!");
+    }
     theWheel.rotationAngle = 0;
     theWheel.draw();
 }
