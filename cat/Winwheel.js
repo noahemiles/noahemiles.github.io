@@ -1434,7 +1434,7 @@ Winwheel.prototype.deleteSegment = function(position)
     // is more than one segment currently left in the wheel.
 
     //++ check that specifying a position that does not exist - say 10 in a 6 segment wheel does not cause issues.
-    if (this.numSegments > 1) {
+    if (this.numSegments > 0) {
         // If the position of the segment to remove has been specified.
         if (typeof position !== 'undefined') {
             // The array is to be shortened so we need to move all segments after the one
