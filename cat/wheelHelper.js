@@ -54,11 +54,14 @@ canvas.onclick = function (e) {
 
     // A pointer to the segment clicked is returned if the user clicked inside the wheel.
     if (clickedSegment) {
-        // Change background colour of the segment and update the wheel.
-        clickedSegment.text = document.getElementById('new-stu').value;
-        document.getElementById('new-stu').value = "";
-        document.getElementById('new-stu').focus();
-        theWheel.draw();
+        let inputValue = document.getElementById('new-stu').value;
+        if (inputValue) {
+            // Change background colour of the segment and update the wheel.
+            clickedSegment.text = inputValue;
+            document.getElementById('new-stu').value = "";
+            document.getElementById('new-stu').focus();
+            theWheel.draw();
+        }
     }
 }
 
@@ -68,7 +71,9 @@ function alertPrize() {
     let winningSegment = theWheel.getIndicatedSegment();
 
     // Basic alert of the segment text which is the prize name.
-    alert("You are the chosen one, " + winningSegment.text + "!");
+    if (winningSegment.text.length > 0) {
+        alert("You are the chosen one, " + winningSegment.text + "!");
+    }
     theWheel.rotationAngle = 0;
     theWheel.draw();
 }
@@ -88,7 +93,16 @@ function getRandomColor() {
     for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
-    return color;
+    return hex_is_light(color) ? color : getRandomColor();
+}
+
+function hex_is_light(color) {
+    const hex = color.replace('#', '');
+    const c_r = parseInt(hex.substring(0, 0 + 2), 16);
+    const c_g = parseInt(hex.substring(2, 2 + 2), 16);
+    const c_b = parseInt(hex.substring(4, 4 + 2), 16);
+    const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+    return brightness > 155;
 }
 
 function addSegment() {
