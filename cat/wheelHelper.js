@@ -55,7 +55,6 @@ canvas.onclick = function (e) {
     // A pointer to the segment clicked is returned if the user clicked inside the wheel.
     if (clickedSegment) {
         let inputValue = document.getElementById('new-stu').value;
-        console.log(clickedSegment);
         if (inputValue) {
             // Change background colour of the segment and update the wheel.
             clickedSegment.text = inputValue;
