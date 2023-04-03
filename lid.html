@@ -4,7 +4,9 @@
 <head>
     <title>TheLid</title>
     <style>
-        html, body, iframe {
+        html,
+        body,
+        iframe {
             height: 100%;
             width: 100%;
         }
@@ -12,7 +14,20 @@
 </head>
 
 <body>
+    <label for="">Share Link
+        <input id="shareLink" type="text">
+    </label>
+    <button id="shareSubmit">Submit</button>
     <iframe id="4fun" src="" frameborder="0"></iframe>
 </body>
+<script>
+    let shareLink = document.getElementById("shareLink"),
+        shareSubmit = document.getElementById("shareSubmit"),
+        shareFrame = document.getElementById("4fun");
 
+    shareSubmit.addEventListener("click", (e) => {
+        if (!shareLink.value || shareLink.value == "") return;
+        shareFrame.src = shareLink.value;
+    });
+</script>
 </html>
