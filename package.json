@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-nomin": "sass decordock/assets/scss/style.scss decordock/assets/scss/build/styles.css"
+    "sass-nomin": "sass decordock/assets/scss/style.scss decordock/assets/scss/build/styles.css",
+    "dev": "npm run sass-nomin"
   },
   "keywords": [],
   "author": "Noah",
