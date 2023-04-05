@@ -3,6 +3,9 @@
     padding: 0;
 }
 #banner-header {
+    p {
+        letter-spacing: 0.125em;
+    }
     display: flex;
     background-color: $main-color;
     justify-content: center;
