@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    height: 100vh;
+}
+header {
+    display: flex;
+}
 #banner-header {
     p {
         letter-spacing: 0.125em;
@@ -12,11 +19,38 @@
     align-items: center;
     height: 30px;
 }
+#main-content {
+    display: block;
+    padding: 24px;
+}
+
+
+
+
+#menu-header {
+    display: flex;
+    flex-direction: row;
+}
+.burger-menu {
+    display: inherit;
+    width: 15%;
+}
+.logo-title {
+    display: inherit;
+    width: 70%;
+}
 
 .logo-main {
     font-size: $logo-font-size;
     font-family: $logo-font-family;
     font-weight: $logo-font-weight;
+    flex-grow: 0.2;
+}
+
+.main-item {
+    min-height: 500px;
+    background-color: $secondary-color;
+    margin-top: 24px;
 }
 
 h1 {
