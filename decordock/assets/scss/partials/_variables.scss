@@ -1,1 +1,34 @@
-$white: #fff;
+//standard colors
+$white: #FFFFFF;
+$black: #121212;
+
+//theme colors
+$main-color: rgb(40, 202, 235);
+$secondary-color: rgb(227, 247, 255);
+
+//font styles
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Playfair+Display&display=swap');
+
+//logo
+$logo-font-size: 22px;
+$logo-font-family: 'Cinzel', Georgia, serif;
+$logo-font-weight: 400;
+
+//h1
+$h1-font-weight: 400;
+$h1-font-size: 32px;
+$h1-font-family: 'Playfair Display', Georgia, serif;
+
+//h2
+$h2-font-weight: 400;
+$h2-font-size: 16px;
+$h2-font-family: Helvetica, arial, sans-serif;
+
+//p
+$p-font-weight: 400;
+$p-font-size: 16px;
+$p-font-family: Helvetica, arial, sans-serif;
+
+
