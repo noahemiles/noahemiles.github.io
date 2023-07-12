@@ -8,6 +8,8 @@ body {
 }
 header {
     display: flex;
+    height: 40px;
+    align-items: center;
 }
 #banner-header {
     p {
@@ -45,6 +47,8 @@ header {
     font-family: $logo-font-family;
     font-weight: $logo-font-weight;
     flex-grow: 0.2;
+    letter-spacing: 2px;
+    line-height: 1;
 }
 
 .main-item {
