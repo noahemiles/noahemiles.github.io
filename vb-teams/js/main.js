@@ -2,12 +2,14 @@ angular.module('vb-teams', [])
     .controller('MainCtrl', ($scope) => {
         $scope.players = [];
         $scope.teams = [];
+
         $scope.newPlayer = null;
+        $scope.editedPlayer = null;
+        $scope.currentTeam = null;
 
         $scope.isCreating = false;
         $scope.isEditing = false;
         $scope.isEditingTeam = false;
-        $scope.currentTeam = null;
         $scope.isInvalidTeam = false;
 
         const store = JSON.parse(localStorage.getItem('vbTeams'));
@@ -132,16 +134,20 @@ angular.module('vb-teams', [])
         $scope.deletePlayer = function deletePlayer(player) {
             const index = findPlayerIndex(player.id);
             if (index > -1) {
-                $scope.players.splice(index, 1);
+                if (confirm("Delete Player?")) {
+                    $scope.players.splice(index, 1);
+                }
             }
         };
 
         $scope.deleteTeam = function deleteTeam(team) {
             const index = findTeamIndex(team);
             if (index > -1) {
-                updatePlayerTeam(null);
-                $scope.teams.splice(index, 1);
-                $scope.setCurrentTeam(null);
+                if (confirm("Delete Team?")) {
+                    updatePlayerTeam(null);
+                    $scope.teams.splice(index, 1);
+                    $scope.setCurrentTeam(null);
+                }
             }
         };
 

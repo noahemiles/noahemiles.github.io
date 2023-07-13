@@ -105,6 +105,12 @@ a:hover {
         display: block;
         background-color: #007c38;
     }
+    div.main {
+        padding-top: 15px;
+    }
+    button.close {
+        font-size: 40px;
+    }
 }
 @media (min-width: 768px) {
     .sidebar {
