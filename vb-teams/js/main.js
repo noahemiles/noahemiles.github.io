@@ -8,6 +8,7 @@ angular.module('vb-teams', [])
         $scope.isEditing = false;
         $scope.isEditingTeam = false;
         $scope.currentTeam = null;
+        $scope.isInvalidTeam = false;
 
         const store = JSON.parse(localStorage.getItem('vbTeams'));
         if (store) {
@@ -54,7 +55,11 @@ angular.module('vb-teams', [])
         //crud
 
         $scope.addTeam = function addTeam(team) {
-            $scope.teams.push(team);
+            if (findTeamIndex(team) == -1 && team.length > 0) {
+                $scope.teams.push(team);
+            } else {
+                $scope.isInvalidTeam = true;
+            }
         };
 
         $scope.createPlayer = function createPlayer(player) {

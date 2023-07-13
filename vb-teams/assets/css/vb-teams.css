@@ -37,6 +37,10 @@ a:hover {
     background-color: darkred;
 }
 
+.invalid {
+    border: 5px solid red;
+}
+
 .sidebar a {
     color: #5bc0de;
     font-size: 30px;
@@ -99,6 +103,7 @@ a:hover {
 @media (max-width: 768px) {
     .sidebar {
         display: block;
+        background-color: #007c38;
     }
 }
 @media (min-width: 768px) {
@@ -111,7 +116,7 @@ a:hover {
         display: block;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-        background-color: #2B2828;
+        background-color: #007c38;
         border-right: 1px solid #7B807E;
     }
 }

@@ -28,9 +28,11 @@
                         </button>
                     </li>
                     <li>
-                        <form>    
-                            <input type="text" ng-model="newTeam" required>
-                            <a ng-click="addTeam(newTeam);">+</a>
+                        <form class="create-form" role="form" ng-submit="addTeam(newTeam)">    
+                            <input type="text" ng-model="newTeam" ng-class="{'invalid':isInvalidTeam}" required>
+                            <button type="button" class="btn btn-link" ng-click="addTeam(newTeam);">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
                         </form>
                     </li>
                 </ul>
