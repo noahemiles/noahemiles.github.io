@@ -11,7 +11,6 @@ angular.module('vb-teams', [])
 
         const store = JSON.parse(localStorage.getItem('vbTeams'));
         if (store) {
-            console.log(store);
             $scope.players = store.players;
             $scope.teams = store.teams;
         }
@@ -35,6 +34,10 @@ angular.module('vb-teams', [])
             $scope.editedPlayer = angular.copy(player);
         };
 
+        $scope.setEditedTeam = function setEditedTeam(team) {
+            $scope.oldTeam = team;
+        };
+
         $scope.isSelectedPlayer = function isSelectedPlayer(player) {
             return $scope.editedPlayer !== null && $scope.editedPlayer && $scope.editedPlayer.id === player.id;
         };
@@ -55,6 +58,7 @@ angular.module('vb-teams', [])
         };
 
         $scope.createPlayer = function createPlayer(player) {
+            if (!player.name) return;
             if (!player.tall) {
                 player.tall = false;
             }
@@ -88,6 +92,15 @@ angular.module('vb-teams', [])
                 $scope.players[index] = player;
                 $scope.editedPlayer = null;
                 $scope.isEditing = false;
+            }
+        };
+
+        $scope.updateTeam = function updateTeam(team) {
+            const index = $scope.teams.indexOf($scope.oldTeam);
+            if (index > -1) {
+                $scope.teams[index] = team;
+                $scope.editedTeam = null;
+                $scope.isEditingTeam = false;
             }
         };
 

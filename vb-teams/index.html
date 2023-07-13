@@ -22,6 +22,10 @@
                         <a ng-click="setCurrentTeam(team)">
                             {{team}}
                         </a>
+                        <button type="button" class="btn btn-link"
+                            ng-click="setCurrentTeam(team);setEditedTeam(team);startEditingTeam();"><span
+                                class="glyphicon glyphicon-pencil"></span>
+                        </button>
                     </li>
                     <li>
                         <form>    
@@ -38,7 +42,7 @@
                         ng-click="setEditedPlayer(player);startEditing();"><span
                             class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <a href="{{player.url}}" target="_blank">{{player.name}}</a>
+                    <a>{{player.name}}</a>
                 </div>
                 <hr />
                 <!-- CREATING -->
@@ -46,10 +50,6 @@
                     <button type="button" class="btn btn-link" ng-click="startCreating()">
                         <span class="glyphicon glyphicon-plus"></span>
                         Create Player
-                    </button>
-                    <button type="button" class="btn btn-link" ng-click="startEditingTeam()">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        Edit Team
                     </button>
                     <form class="create-form" ng-show="isCreating" role="form" ng-submit="createPlayer(newPlayer)"
                         novalidate>
@@ -86,12 +86,12 @@
                 <!-- EDITING TEAM -->
                 <div ng-show="shouldShowEditingTeam()">
                     <h4>Editing {{editedTeam}}</h4>
-                    <form class="edit-form" role="form" ng-submit="updateTeam(newTeam)"
+                    <form class="edit-form" role="form" ng-submit="updateTeam(editedTeam)"
                         novalidate>
                         <div class="form-group">
                             <label for="editTeamName">Team Name</label>
-                            <input type="text" class="form-control" id="editTeamName" ng-model="editTeam"
-                                placeholder="Enter name" ng-value="currentTeam">
+                            <input type="text" class="form-control" id="editedTeam" ng-model="editedTeam"
+                                placeholder="Enter name" ng-value="oldTeam">
                         </div>
                         <button type="submit" class="btn btn-info btn-lg">Save</button>
                         <button type="button" class="btn btn-default btn-lg pull-right"
