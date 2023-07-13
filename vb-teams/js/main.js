@@ -98,9 +98,15 @@ angular.module('vb-teams', [])
         $scope.updateTeam = function updateTeam(team) {
             const index = $scope.teams.indexOf($scope.oldTeam);
             if (index > -1) {
+                $scope.players.forEach(player => {
+                    if (player.team == $scope.oldTeam) {
+                        player.team = team;
+                    }
+                });
                 $scope.teams[index] = team;
                 $scope.editedTeam = null;
                 $scope.isEditingTeam = false;
+                $scope.setCurrentTeam(team);
             }
         };
 
