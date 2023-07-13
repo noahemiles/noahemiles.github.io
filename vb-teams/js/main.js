@@ -85,6 +85,16 @@ angular.module('vb-teams', [])
             }
             return foundIndex;
         }
+        function findTeamIndex(teamName) {
+            let foundIndex = -1;
+            for (const [index, search] of $scope.teams.entries()) {
+                if (search === teamName) {
+                    foundIndex = index;
+                    break;
+                }
+            }
+            return foundIndex;
+        }
 
         $scope.updatePlayer = function updatePlayer(player) {
             const index = findPlayerIndex(player.id);
@@ -95,14 +105,18 @@ angular.module('vb-teams', [])
             }
         };
 
+        function updatePlayerTeam(team) {
+            $scope.players.forEach(player => {
+                if (player.team == $scope.oldTeam) {
+                    player.team = team;
+                }
+            });
+        }
+
         $scope.updateTeam = function updateTeam(team) {
             const index = $scope.teams.indexOf($scope.oldTeam);
             if (index > -1) {
-                $scope.players.forEach(player => {
-                    if (player.team == $scope.oldTeam) {
-                        player.team = team;
-                    }
-                });
+                updatePlayerTeam(team);
                 $scope.teams[index] = team;
                 $scope.editedTeam = null;
                 $scope.isEditingTeam = false;
@@ -114,6 +128,15 @@ angular.module('vb-teams', [])
             const index = findPlayerIndex(player.id);
             if (index > -1) {
                 $scope.players.splice(index, 1);
+            }
+        };
+
+        $scope.deleteTeam = function deleteTeam(team) {
+            const index = findTeamIndex(team);
+            if (index > -1) {
+                updatePlayerTeam(null);
+                $scope.teams.splice(index, 1);
+                $scope.setCurrentTeam(null);
             }
         };
 
