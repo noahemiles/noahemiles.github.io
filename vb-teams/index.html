@@ -67,6 +67,13 @@
                                 <option value="male">Male</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="newPlayerTall">Player Tall?</label>
+                            <select type="text" class="form-control" id="newPlayerTall" ng-model="newPlayer.tall">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-info btn-lg">Create</button>
                         <button type="button" class="btn btn-default btn-lg pull-right"
                             ng-click="cancel()">Cancel</button>
@@ -93,6 +100,13 @@
                             <label>Player Team</label>
                             <select class="form-control" ng-options="team for team in teams"
                                 ng-model="editedPlayer.team" ng-selected="editedPlayer.team">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editedPlayerTall">Player Tall?</label>
+                            <select type="text" class="form-control" id="editedPlayerTall" ng-model="editedPlayer.tall">
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-info btn-lg">Save</button>
