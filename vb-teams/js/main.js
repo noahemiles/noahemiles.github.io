@@ -1,7 +1,7 @@
 angular.module('vb-teams', [])
     .controller('MainCtrl', ($scope) => {
         $scope.players = [];
-        $scope.teams = ["testTeam1", "testTeam2", "testTeam3"];
+        $scope.teams = [];
         $scope.newPlayer = null;
 
         $scope.isCreating = false;
@@ -9,6 +9,18 @@ angular.module('vb-teams', [])
         $scope.isEditingTeam = false;
         $scope.currentTeam = null;
 
+        const store = JSON.parse(localStorage.getItem('vbTeams'));
+        if (store) {
+            console.log(store);
+            $scope.players = store.players;
+            $scope.teams = store.teams;
+        }
+        setInterval(updateStorage, 1000);
+
+        function updateStorage() {
+            const vbTeams = { "players": $scope.players, "teams": $scope.teams };
+            localStorage.setItem("vbTeams", JSON.stringify(vbTeams));
+        }
         $scope.isCurrentTeam = function isCurrentTeam(team) {
             return $scope.currentTeam !== null && team === $scope.currentTeam;
         };
@@ -24,7 +36,7 @@ angular.module('vb-teams', [])
         };
 
         $scope.isSelectedPlayer = function isSelectedPlayer(player) {
-            return $scope.editedPlayer !== null && $scope.editedPlayer.id === player.id;
+            return $scope.editedPlayer !== null && $scope.editedPlayer && $scope.editedPlayer.id === player.id;
         };
 
         function resetNewPlayerForm() {
@@ -55,7 +67,7 @@ angular.module('vb-teams', [])
             $scope.players.push(player);
             resetNewPlayerForm();
         };
-        const uid = function(){
+        const uid = function () {
             return Date.now().toString(36) + Math.random().toString(36).substr(2);
         };
 
@@ -122,6 +134,7 @@ angular.module('vb-teams', [])
             $scope.isEditing = false;
             $scope.isCreating = false;
             $scope.isEditingTeam = false;
+            $scope.editedPlayer = null;
         };
     })
 
