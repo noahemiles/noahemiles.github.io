@@ -148,7 +148,7 @@ angular.module('vb-teams', [])
         // creating and editing
 
         $scope.shouldShowCreating = function shouldShowCreating() {
-            return $scope.currentTeam && !$scope.isEditing;
+            return !$scope.isEditing;
         };
 
         $scope.shouldShowEditing = function shouldShowEditing() {
