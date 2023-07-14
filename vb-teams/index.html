@@ -16,29 +16,39 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
+                <!-- LOGO -->
                 <a ng-click="setCurrentTeam()"><img class="logo" src="assets/img/volleyball.svg"></a>
+                <!-- SIDEBAR -->
                 <ul class="nav nav-sidebar">
+                    <!-- SHOW TEAMS -->
                     <li ng-repeat="team in teams" ng-class="{'active':isCurrentTeam(team)}">
                         <a ng-click="setCurrentTeam(team)">
                             {{team}}
                         </a>
+                        <!-- EDIT TEAMS -->
                         <button type="button" class="btn btn-link"
                             ng-click="setCurrentTeam(team);setEditedTeam(team);startEditingTeam();"><span
                                 class="glyphicon glyphicon-pencil"></span>
                         </button>
                     </li>
+                    <!-- ADD TEAM -->
                     <li>
                         <form class="create-form" role="form" ng-submit="addTeam(newTeam)">
-                            <input type="text" ng-model="newTeam" ng-class="{'invalid':isInvalidTeam}" required>
+                            <input type="text" ng-model="newTeam" ng-class="{'invalid':isInvalidTeam}"
+                                placeholder="Add Team" required>
                             <button type="button" class="btn btn-link" ng-click="addTeam(newTeam);">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                         </form>
                     </li>
                 </ul>
+                <!-- END SIDEBAR -->
             </div>
+
+            <!-- MAIN VIEW -->
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <div ng-repeat="player in players | filter:{team:currentTeam}"
+                <!-- SHOW PLAYERS -->
+                <div ng-repeat="player in players | filter:playerFilter track by $index"
                     ng-class="{active: isSelectedPlayer(player)}">
                     <button type="button" class="close" ng-click="deletePlayer(player)">&times;</button>
                     <button type="button" class="btn btn-link" ng-click="setEditedPlayer(player);startEditing();"><span
@@ -91,7 +101,8 @@
                         </div>
                         <div class="form-group">
                             <label for="editedPlayerGender">Player Gender</label>
-                            <select type="text" class="form-control" id="editedPlayerGender" ng-model="editedPlayer.gender">
+                            <select type="text" class="form-control" id="editedPlayerGender"
+                                ng-model="editedPlayer.gender">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>

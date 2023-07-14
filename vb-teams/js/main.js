@@ -54,6 +54,10 @@ angular.module('vb-teams', [])
             };
         }
 
+        $scope.playerFilter = function(player) {
+            return ($scope.currentTeam == player.team || $scope.currentTeam == null);
+        };
+
         //crud
 
         $scope.addTeam = function addTeam(team) {
