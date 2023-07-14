@@ -9,6 +9,7 @@ angular.module('vb-teams', [])
 
         $scope.isCreating = false;
         $scope.isEditing = false;
+        $scope.isShuffling = false;
         $scope.isEditingTeam = false;
         $scope.isInvalidTeam = false;
 
@@ -54,7 +55,7 @@ angular.module('vb-teams', [])
             };
         }
 
-        $scope.playerFilter = function(player) {
+        $scope.playerFilter = function (player) {
             return ($scope.currentTeam == player.team || $scope.currentTeam == null);
         };
 
@@ -118,7 +119,7 @@ angular.module('vb-teams', [])
 
         function updatePlayerTeam(team) {
             $scope.players.forEach(player => {
-                if (player.team == $scope.oldTeam) {
+                if (player.team == $scope.oldTeam || (team == null && $scope.isShuffling)) {
                     player.team = team;
                 }
             });
@@ -152,6 +153,38 @@ angular.module('vb-teams', [])
                     $scope.teams.splice(index, 1);
                     $scope.setCurrentTeam(null);
                 }
+            }
+        };
+
+        $scope.shuffleTeams = function shuffleTeams() {
+            if ($scope.teams.length > 1) {
+                $scope.isShuffling = true;
+                updatePlayerTeam(null);
+                //shuffle teams of active players
+                const activePlayers = $scope.players.filter(player => {
+                    return player.active == true;
+                });
+                const activeCount = activePlayers.length,
+                    teamCount = $scope.teams.length;
+                const playersPerTeam = Math.round(activeCount / teamCount);
+                if (activeCount > 1) {
+                    const teamsCopy = angular.copy($scope.teams);
+                    const teamPlayerCount = {};
+                    teamsCopy.forEach(team => teamPlayerCount[team] = 0);
+                    activePlayers.map((player, index) => {
+                        let randomIndex = Math.floor(Math.random() * teamsCopy.length);
+                        player.team = teamsCopy[randomIndex];
+                        teamPlayerCount[teamsCopy[randomIndex]]++;
+                        if (teamPlayerCount[teamsCopy[randomIndex]] >= playersPerTeam) { // check if team is maxed out on players
+                            if (teamsCopy.length >= 2) {
+                                teamsCopy.splice(randomIndex, 1); // remove team from pool
+                            } else { // 1 team left
+                                randomIndex = 0;
+                            }
+                        }
+                    });
+                }
+                $scope.isShuffling = false;
             }
         };
 
