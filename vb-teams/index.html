@@ -58,7 +58,7 @@
                     <button type="button" class="btn btn-link" ng-click="setEditedPlayer(player);startEditing();"><span
                         class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <a>{{player.name}}</a>
+                    <a ng-class="{male: player.gender == 'male', female: player.gender == 'female' }" ng-click="setEditedPlayer(player);startViewing();">{{player.name}}</a>
                     <a style="font-size: small;">{{player.team}}</a>
                 </div>
                 <hr />
@@ -86,7 +86,7 @@
                             <label for="newPlayerActive">Player Active</label>
                             <input type="checkbox" class="form-control" id="newPlayerActive" ng-model="newPlayer.active">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" ng-show="false">
                             <label for="newPlayerTall">Player Tall?</label>
                             <select type="text" class="form-control" id="newPlayerTall" ng-model="newPlayer.tall">
                                 <option value="true">Yes</option>
@@ -99,19 +99,19 @@
                     </form>
                 </div>
                 <!-- EDITING -->
-                <div ng-show="shouldShowEditing()">
+                <div ng-show="shouldShowViewing()">
                     <h4>Editing {{editedPlayer.displayName}}</h4>
 
                     <form class="edit-form" role="form" ng-submit="updatePlayer(editedPlayer)" novalidate>
                         <div class="form-group">
                             <label>Player Name</label>
                             <input type="text" class="form-control" ng-model="editedPlayer.name"
-                                placeholder="Enter name" autofocus>
+                                placeholder="Enter name" ng-disabled="!shouldShowEditing()" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="editedPlayerGender">Player Gender</label>
                             <select type="text" class="form-control" id="editedPlayerGender"
-                                ng-model="editedPlayer.gender">
+                                ng-model="editedPlayer.gender" ng-disabled="!shouldShowEditing()">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select>
@@ -119,23 +119,25 @@
                         <div class="form-group">
                             <label>Player Team</label>
                             <select class="form-control" ng-options="team for team in teams"
-                                ng-model="editedPlayer.team" ng-selected="editedPlayer.team">
+                                ng-model="editedPlayer.team" ng-selected="editedPlayer.team" ng-disabled="!shouldShowEditing()">
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="editedPlayerActive">Player Active</label>
-                            <input type="checkbox" class="form-control" id="editedPlayerActive" ng-model="editedPlayer.active">
+                            <input type="checkbox" class="form-control" id="editedPlayerActive" ng-model="editedPlayer.active" ng-disabled="!shouldShowEditing()">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" ng-show="false">
                             <label for="editedPlayerTall">Player Tall?</label>
-                            <select type="text" class="form-control" id="editedPlayerTall" ng-model="editedPlayer.tall">
+                            <select type="text" class="form-control" id="editedPlayerTall" ng-model="editedPlayer.tall" ng-disabled="!shouldShowEditing()">
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-info btn-lg">Save</button>
-                        <button type="button" class="btn btn-default btn-lg pull-right"
+                        <div ng-show="shouldShowEditing();">
+                            <button type="submit" class="btn btn-info btn-lg">Save</button>
+                            <button type="button" class="btn btn-default btn-lg pull-right"
                             ng-click="cancel()">Cancel</button>
+                        </div>
                     </form>
                 </div>
                 <!-- EDITING TEAM -->

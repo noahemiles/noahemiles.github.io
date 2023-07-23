@@ -6,6 +6,9 @@ angular.module('vb-teams', [])
         $scope.newPlayer = null;
         $scope.editedPlayer = null;
         $scope.currentTeam = null;
+        $scope.viewedPlayer = null;
+
+        $scope.isViewing = false;
 
         $scope.isCreating = false;
         $scope.isEditing = false;
@@ -198,6 +201,10 @@ angular.module('vb-teams', [])
             return $scope.isEditing && !$scope.isCreating && !$scope.isEditingTeam;
         };
 
+        $scope.shouldShowViewing = function shouldShowViewing() {
+            return $scope.isViewing && !$scope.isCreating && !$scope.isEditingTeam;
+        }
+
         $scope.shouldShowEditingTeam = function shouldShowEditingTeam() {
             return $scope.isEditingTeam && !$scope.isCreating && !$scope.isEditing;
         };
@@ -215,15 +222,25 @@ angular.module('vb-teams', [])
         };
 
         $scope.startEditing = function startEditing() {
-            $scope.isCreating = false;
             $scope.isEditing = true;
+            $scope.isViewing = true;
+            $scope.isCreating = false;
+            $scope.isEditingTeam = false;
+        };
+
+        $scope.startViewing = function startEditing() {
+            $scope.isViewing = true;
+            $scope.isCreating = false;
+            $scope.isEditing = false;
             $scope.isEditingTeam = false;
         };
 
         $scope.cancel = function cancel() {
             $scope.isEditing = false;
+            $scope.isViewing = false;
             $scope.isCreating = false;
             $scope.isEditingTeam = false;
+            $scope.isViewing = false;
             $scope.editedPlayer = null;
         };
     })
