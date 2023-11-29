@@ -17,6 +17,8 @@
 
 <body>
     <div class="container">
+        <div id="nav" class="nav">Home</div>
+        <div id="nav2" class="nav second">Pages</div>
         <canvas id='myCanvas' width='500' height='800'>
             Canvas not supported, use another browser.
         </canvas>
@@ -33,6 +35,10 @@
     <h1 id="main-title">Wheel<br>Of<br>Torture!</h1>
 
     <script src="wheelHelper.js"></script>
+    <script>
+        document.getElementById('nav').onclick = () => window.location.href = "/";
+        document.getElementById('nav2').onclick = () => window.location.href = "/Pages.html";
+    </script>
 </body>
 
 </html>
