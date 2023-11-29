@@ -6,6 +6,7 @@ function addNavDivs() {
     "Skills",
     "References",
     //"Privacy",
+    "Pages",
     "About",
   ];
   links.forEach((linkText) => {

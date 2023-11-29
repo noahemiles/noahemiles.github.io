@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Miles | Projects</title>
+</head>
+
+<body id=projects>
+  <div id="container">
+    <div id="nav"></div>
+    <div id="content">
+      <div id="project-content">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pages = {
+      'Cat Wheel': '/cat',
+      'Christmas Countdown': '/countdown',
+      'Head Banger': '/head-banger',
+      'practice-exam': '/practice-exam',
+    }
+    function createGitDivs(pages) {
+      let project_content = document.getElementById("project-content");
+      Object.keys(pages).forEach((page) => {
+        let newDiv = document.createElement("div");
+        let newLink = document.createElement("a");
+        let newH2 = document.createElement("h2");
+        newH2.innerHTML = page;
+        newDiv.className = "project-div";
+        newLink.setAttribute("target", "_blank");
+        newLink.href = pages[page];
+        newLink.className = "text";
+        newDiv.appendChild(newH2);
+        newLink.appendChild(newDiv);
+        project_content.appendChild(newLink);
+      });
+    }
+    createGitDivs(pages);
+  </script>
+  <script src="./scripts/nav-function.js"></script>
+</body>
+
+</html>
