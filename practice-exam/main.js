@@ -4,7 +4,6 @@ function app() {
     for (let i = 0; i < divs.length - 1; i++) {
         divs[i].style.backgroundColor = turtleColors.divs[i].className;
     }
-    localStorage.setItem('seen', 'true');
 }
 
 const turtleColors = {
@@ -24,5 +23,7 @@ let updateUser = function () {
             t.style.borderStyle = "dashed";
             t.style.borderColor = "white";
         });
+    } else {
+        localStorage.setItem('seen', 'true');
     }
 }
