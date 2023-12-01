@@ -200,41 +200,48 @@
         '!': '-.-.--',
     };
 
-    const rot = function(string, n = 13) {
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var regexLowercase = /[a-z]/;
-        var regexUppercase = /[A-Z]/;
-        n = Number(n);
-        string = String(string);
-        if (n == 0) {
-            return string;
-        }
-        if (n < 0) { // decode instead of encode
-            n += 26;
-        }
-        var length = string.length;
-        var index = -1;
-        var result = '';
-        var character;
-        var currentPosition;
-        var shiftedPosition;
-        while (++index < length) {
-            character = string.charAt(index);
-            if (regexLowercase.test(character)) {
-                currentPosition = lowercase.indexOf(character);
-                shiftedPosition = (currentPosition + n) % 26;
-                result += lowercase.charAt(shiftedPosition);
-            } else if (regexUppercase.test(character)) {
-                currentPosition = uppercase.indexOf(character);
-                shiftedPosition = (currentPosition + n) % 26;
-                result += uppercase.charAt(shiftedPosition);
-            } else {
-                result += character;
-            }
-        }
-        return result;
+    const rot = function (string, n = 13) {
+    var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+    var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var numbers = '0123456789';
+    var regexLowercase = /[a-z]/;
+    var regexUppercase = /[A-Z]/;
+    var regexNumbers = /[0-9]/;
+    n = Number(n);
+    string = String(string);
+    if (n == 0) {
+        return string;
     }
+    if (n < 0) { // decode instead of encode
+        n += 26; // 26 for letters + 10 for numbers
+    }
+    var length = string.length;
+    var index = -1;
+    var result = '';
+    var character;
+    var currentPosition;
+    var shiftedPosition;
+    while (++index < length) {
+        character = string.charAt(index);
+        if (regexLowercase.test(character)) {
+            currentPosition = lowercase.indexOf(character);
+            shiftedPosition = (currentPosition + n) % 26;
+            result += lowercase.charAt(shiftedPosition);
+        } else if (regexUppercase.test(character)) {
+            currentPosition = uppercase.indexOf(character);
+            shiftedPosition = (currentPosition + n) % 26;
+            result += uppercase.charAt(shiftedPosition);
+        } else if (regexNumbers.test(character)) {
+            currentPosition = numbers.indexOf(character);
+            shiftedPosition = (currentPosition + n) % 26;
+            result += numbers.charAt(shiftedPosition);
+        } else {
+            result += character;
+        }
+    }
+    return result;
+}
+
 
     function decodeMorse(morseCode) {
         return morseCode
