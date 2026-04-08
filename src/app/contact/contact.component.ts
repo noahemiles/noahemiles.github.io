@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-
+  readonly email = 'noahemiles@gmail.com';
+  readonly emailHref = 'mailto:noahemiles@gmail.com';
+  readonly linkedInHref = 'https://www.linkedin.com/in/noah-e-miles/';
 }
