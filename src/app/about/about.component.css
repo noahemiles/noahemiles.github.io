@@ -1,0 +1,30 @@
+.about {
+    max-width: 32rem;
+    margin-inline: auto;
+}
+
+.about-card {
+    padding: 1rem 1.125rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.about-blurb__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #5f6368;
+}
+
+.about-blurb {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #202124;
+    line-height: 1.55;
+}
