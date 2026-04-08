@@ -1,4 +1,4 @@
 export interface ProjectDetails {
-    path: String,
-    title: String,
+  path: string;
+  title: string;
 }
