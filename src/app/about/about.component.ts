@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+  readonly careerStartYear = 2022;
 
+  get yearsExperience(): number {
+    return new Date().getFullYear() - this.careerStartYear;
+  }
 }
