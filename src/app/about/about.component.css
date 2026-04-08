@@ -1,10 +1,27 @@
 .about {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     max-width: 32rem;
     margin-inline: auto;
 }
 
+@media (min-width: 52rem) {
+    .about {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: min(100%, 56rem);
+    }
+
+    .about-card {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
 .about-card {
-    padding: 1rem 1.125rem;
+    padding: 0;
+    overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -13,18 +30,64 @@
 
 .about-blurb__label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    margin: 0;
+    padding: 0.55rem 1.2rem;
+    background-color: #0a66c2;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: #5f6368;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .about-blurb {
     margin: 0;
-    font-size: 1rem;
+    padding: 1rem 1.125rem 1.125rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: #202124;
     line-height: 1.55;
+    letter-spacing: 1px;
+}
+
+.about-skills {
+    margin: 0;
+    padding: 0.75rem 1.125rem 1.125rem;
+    list-style: none;
+}
+
+.about-skills__item {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.about-skills__item:first-child {
+    padding-top: 0;
+}
+
+.about-skills__item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.about-skills__category {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #3c4043;
+}
+
+.about-skills__text {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #202124;
+    line-height: 1.5;
+    padding-left: 0.5rem;
+    letter-spacing: 1px;
 }
