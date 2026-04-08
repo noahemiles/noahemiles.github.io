@@ -1,0 +1,30 @@
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 1rem;
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+    .results {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: start;
+    }
+}
+
+@media (max-width: 47.9375rem) {
+    .results {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+}
