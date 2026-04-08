@@ -11,11 +11,15 @@
         flex-direction: row;
         align-items: flex-start;
         max-width: min(100%, 56rem);
+        flex-wrap: wrap;
     }
 
     .about-card {
         flex: 1 1 0;
         min-width: 0;
+    }
+    .about-card--experience {
+        flex: 1 0 100%;
     }
 }
 
@@ -90,4 +94,46 @@
     line-height: 1.5;
     padding-left: 0.5rem;
     letter-spacing: 1px;
+}
+
+.about-sub__text {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: slategray;
+    line-height: 1.35;
+    padding-left: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.about-card--experience .about-experience__summary {
+    margin: 0 0 0.45rem;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #5f6368;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.about-card--experience .about-experience__bullets {
+    margin: 0.45rem 0 0;
+    padding-left: 1.35rem;
+    list-style: disc;
+    color: #202124;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+.about-card--experience .about-experience__bullets li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.15rem;
+}
+
+.about-card--experience .about-experience__bullets li:last-child {
+    margin-bottom: 0;
 }
