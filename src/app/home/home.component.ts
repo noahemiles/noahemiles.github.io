@@ -12,9 +12,20 @@ import { HousingService } from '../housing.service';
 })
 export class HomeComponent {
   housingLocationList: HousingLocation[] = [];
+  filteredLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
 
   constructor() {
     this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.filteredLocationList = JSON.parse(JSON.stringify(this.housingLocationList));
+  }
+
+  filterResults(filterValue: string) {
+    filterValue = filterValue.toLowerCase();
+    this.filteredLocationList = this.housingLocationList.filter((housingLocation: HousingLocation) => {
+      return housingLocation.city.toLowerCase().indexOf(filterValue) > -1 || 
+        housingLocation.state.toLowerCase().indexOf(filterValue) > -1 || 
+        housingLocation.name.toLowerCase().indexOf(filterValue) > -1;
+    });
   }
 }
