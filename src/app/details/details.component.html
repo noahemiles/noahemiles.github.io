@@ -1,1 +1,20 @@
-<p>details works! {{housingLocationId}}</p>
+<button class="back-button"><a routerLink="/angular">Back to all listings</a></button>
+<article>
+    <img [src]="housingLocation?.photo" alt="" class="listing-photo" onerror="this.onerror=null; this.src='https://www.placekittens.com/300/300'">
+    <section class="listing-description">
+        <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
+        <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>
+    </section>
+    <section class="listing-features">
+        <h2 class="section-heading">About this location</h2>
+        <ul>
+            <li>Units available: {{ housingLocation?.availableUnits }}</li>
+            <li>Wifi? {{ housingLocation?.wifi ? "Yes!" : "No" }}</li>
+            <li>Laundry? {{ housingLocation?.laundry ? "Yes!" : "No" }}</li>
+        </ul>
+    </section>
+    <section class="listing-apply">
+        <h2 class="section-heading">Apply to live here</h2>
+        <button class="primary">Apply Now!</button>
+    </section>
+</article>

@@ -1,6 +1,6 @@
 <section class="search">
     <form>
-        <input type="text" placeholder="Search" #filter>
+        <input type="text" placeholder="Search">
         <button class="primary" type="button">Search</button>
     </form>
 </section>
@@ -8,6 +8,5 @@
     <app-housing-location 
         *ngFor="let housingLocation of housingLocationList"
         [housingLocation]="housingLocation"
-        [hidden]="!housingLocation.city.toLowerCase().includes(filter.value.toLowerCase())"
     ></app-housing-location>
 </section>
