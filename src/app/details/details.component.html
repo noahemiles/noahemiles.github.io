@@ -17,11 +17,11 @@
         <h2 class="section-heading">Apply to live here</h2>
         <form [formGroup]="applyForm" (submit)="submitApplication()">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" formControlName="firstName">
+            <input type="text" id="first-name" formControlName="firstName" required>
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" formControlName="lastName">
+            <input type="text" id="last-name" formControlName="lastName" requierd>
             <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email">
+            <input type="email" id="email" formControlName="email" requied>
             <button class="primary" type="submit">Apply Now!</button>
         </form>
     </section>

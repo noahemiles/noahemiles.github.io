@@ -118,6 +118,8 @@ export class HousingService {
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
-    alert([firstName, lastName, email]);
+    if (firstName && lastName && email) {
+      alert([firstName, lastName, email]);
+    }
   }
 }
