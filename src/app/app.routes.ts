@@ -4,6 +4,7 @@ import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
+import { OpenGymComponent } from './open-gym/open-gym.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,10 @@ export const routes: Routes = [
     path: 'projects',
     component: ProjectsPageComponent,
     title: "Projects"
+  },
+  {
+    path: 'open-gym',
+    component: OpenGymComponent,
+    title: "Open Gym"
   }
 ];
