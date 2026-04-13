@@ -2,11 +2,12 @@ import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild } fr
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
