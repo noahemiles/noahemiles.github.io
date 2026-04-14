@@ -12,7 +12,7 @@
     </button>
     <nav id="site-nav" class="site-nav__nav" [class.site-nav__nav--open]="menuOpen" aria-label="Primary">
         <ul class="site-nav__list" (click)="closeMenu()">
-            @for (menuItem of menuItems; track menuItem) {
+            @for (menuItem of menuItems; track menuItem.path) {
                 <li><a [routerLink]="menuItem?.path" class="site-nav__link">{{ menuItem?.title }}</a></li>
             }
         </ul>
