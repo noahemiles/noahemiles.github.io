@@ -187,6 +187,9 @@ header, footer {
         justify-content: flex-start;
         gap: 0;
     }
+    .site-footer .site-nav__list {
+        flex-direction: row;
+    }
 
     .site-nav__list li {
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
