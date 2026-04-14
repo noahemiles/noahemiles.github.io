@@ -1,39 +1,5 @@
 <main>
-    <header
-        #headerEl
-        class="site-header"
-        [class.site-header--nav-open]="menuOpen"
-    >
-        <h1 class="site-nav__title">
-            <a routerLink="/" class="site-nav__title-link">{{ title }}</a>
-        </h1>
-        <button
-            type="button"
-            class="site-nav__toggle"
-            (click)="toggleMenu()"
-            [attr.aria-expanded]="menuOpen"
-            aria-controls="site-nav"
-            [attr.aria-label]="menuOpen ? 'Close menu' : 'Open menu'"
-        >
-            <span class="site-nav__toggle-box" aria-hidden="true">
-                <span class="site-nav__toggle-bar"></span>
-                <span class="site-nav__toggle-bar"></span>
-                <span class="site-nav__toggle-bar"></span>
-            </span>
-        </button>
-        <nav
-            id="site-nav"
-            class="site-nav__nav"
-            [class.site-nav__nav--open]="menuOpen"
-            aria-label="Primary"
-        >
-            <ul class="site-nav__list" (click)="closeMenu()">
-                <li><a routerLink="/projects" class="site-nav__link">Projects</a></li>
-                <li><a routerLink="/about" class="site-nav__link">About</a></li>
-                <li><a routerLink="/contact" class="site-nav__link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <app-header></app-header>
     <router-outlet />
     <app-footer></app-footer>
 </main>
