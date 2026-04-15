@@ -1,58 +1,4 @@
-<style>
-    .container {
-        padding: 24px;
-    }
 
-    h1,
-    h2 {
-        margin-bottom: 12px;
-    }
-
-    .section {
-        margin-bottom: 32px;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 16px;
-    }
-
-    .swatch {
-        border-radius: var(--radius-md);
-        padding: 16px;
-        color: var(--color-text-inverse);
-        box-shadow: var(--shadow-sm);
-        font-size: 14px;
-    }
-
-    .swatch.light {
-        color: var(--color-text-primary);
-        border: 1px solid var(--color-border);
-    }
-
-    .label {
-        font-weight: bold;
-        margin-bottom: 4px;
-    }
-
-    .card-demo {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-    }
-
-    .card {
-        width: 250px;
-    }
-
-    .row {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-</style>
 <div class="container">
     <h1>🎨 Color System Demo</h1>
 
@@ -152,16 +98,6 @@
     <!-- DARK MODE TOGGLE -->
     <div class="section">
         <h2>Dark Mode</h2>
-        <button class="button button-primary" onclick="toggleTheme()">Toggle Theme</button>
+        <button class="button button-primary" (click)="toggleTheme()">Toggle Themes</button>
     </div>
 </div>
-
-<script>
-    function toggleTheme() {
-        const current = document.documentElement.getAttribute("data-theme");
-        document.documentElement.setAttribute(
-            "data-theme",
-            current === "dark" ? "light" : "dark"
-        );
-    }
-</script>
