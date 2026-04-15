@@ -7,7 +7,7 @@ import { ProjectsPageComponent } from './portfolio/projects/projects-page/projec
 import { OpenGymLandingPageComponent } from './open-gym/open-gym-landing-page/open-gym-landing-page.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
-import { ColorDemoComponent } from './open-gym/color-demo/color-demo.component';
+import { ColorDemoComponent } from './color-demo/color-demo.component';
 
 export const routes: Routes = [
   {
@@ -51,7 +51,7 @@ export const routes: Routes = [
     title: 'Terms'
   },
   {
-    path: 'open-gym/color',
+    path: 'color',
     component: ColorDemoComponent,
     title: 'Color Demo'
   }

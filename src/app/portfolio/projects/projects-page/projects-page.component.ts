@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ProjectTileComponent } from "../project-tile/project-tile.component";
-
+import { ProjectTileComponent } from '../project-tile/project-tile.component';
 @Component({
   selector: 'app-projects-page',
   standalone: true,
