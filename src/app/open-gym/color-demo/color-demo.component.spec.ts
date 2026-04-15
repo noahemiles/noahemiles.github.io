@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenGymComponent } from './open-gym.component';
+import { ColorDemoComponent } from './color-demo.component';
 
-describe('OpenGymComponent', () => {
-  let component: OpenGymComponent;
-  let fixture: ComponentFixture<OpenGymComponent>;
+describe('ColorDemoComponent', () => {
+  let component: ColorDemoComponent;
+  let fixture: ComponentFixture<ColorDemoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OpenGymComponent]
+      imports: [ColorDemoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(OpenGymComponent);
+    fixture = TestBed.createComponent(ColorDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

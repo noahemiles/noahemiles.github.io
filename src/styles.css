@@ -1,4 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("./assets/variables.css");
+
+  /* =========================
+     🌍 BASE STYLES
+  ========================= */
+  body {
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    margin: 0;
+  }
+  
+  /* =========================
+     🔘 BUTTONS
+  ========================= */
+  .button {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+  }
+  
+  .button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+  
+  .button-primary:hover {
+    background-color: var(--color-primary-light);
+  }
+  
+  .button-accent {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+  }
+  
+  .button-accent:hover {
+    background-color: var(--color-accent-light);
+  }
+  
+  /* =========================
+     🧱 CARD
+  ========================= */
+  .card {
+    background-color: var(--color-background-tertiary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+  }
+  
+  /* =========================
+     📝 INPUTS
+  ========================= */
+  .input {
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background-tertiary);
+    color: var(--color-text-primary);
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+  
+  /* =========================
+     🔗 LINKS
+  ========================= */
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
 * { 
     box-sizing: border-box;
     margin: 0;
@@ -28,6 +108,10 @@ main {
     }
 
 }
+
+  /* =========================
+     NAV
+  ========================= */
 header, footer {
     display: flex;
     flex-wrap: wrap;

@@ -2,7 +2,7 @@ import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild } fr
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { NavMenuItem } from '../nav-menu-item';
+import { NavMenuItem } from '../models/nav-menu-item';
 @Component({
   selector: 'app-header',
   standalone: true,

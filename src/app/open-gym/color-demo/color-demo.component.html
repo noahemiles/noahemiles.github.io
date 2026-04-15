@@ -1,0 +1,167 @@
+<style>
+    .container {
+        padding: 24px;
+    }
+
+    h1,
+    h2 {
+        margin-bottom: 12px;
+    }
+
+    .section {
+        margin-bottom: 32px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .swatch {
+        border-radius: var(--radius-md);
+        padding: 16px;
+        color: var(--color-text-inverse);
+        box-shadow: var(--shadow-sm);
+        font-size: 14px;
+    }
+
+    .swatch.light {
+        color: var(--color-text-primary);
+        border: 1px solid var(--color-border);
+    }
+
+    .label {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    .card-demo {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+</style>
+<div class="container">
+    <h1>🎨 Color System Demo</h1>
+
+    <!-- BACKGROUNDS -->
+    <div class="section">
+        <h2>Backgrounds</h2>
+        <div class="grid">
+            <div class="swatch light" style="background: var(--color-background-primary)">
+                <div class="label">Primary</div>
+                #F4F0E4
+            </div>
+            <div class="swatch light" style="background: var(--color-background-secondary)">
+                <div class="label">Secondary</div>
+            </div>
+            <div class="swatch light" style="background: var(--color-background-tertiary)">
+                <div class="label">Tertiary</div>
+            </div>
+            <div class="swatch light" style="background: var(--color-surface-muted)">
+                <div class="label">Muted Surface</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIMARY -->
+    <div class="section">
+        <h2>Primary (Indigo)</h2>
+        <div class="grid">
+            <div class="swatch" style="background: var(--color-primary-light)">Light</div>
+            <div class="swatch" style="background: var(--color-primary)">Base</div>
+            <div class="swatch" style="background: var(--color-primary-dark)">Dark</div>
+        </div>
+    </div>
+
+    <!-- ACCENT -->
+    <div class="section">
+        <h2>Accent (Teal)</h2>
+        <div class="grid">
+            <div class="swatch" style="background: var(--color-accent-light)">Light</div>
+            <div class="swatch" style="background: var(--color-accent)">Base</div>
+            <div class="swatch" style="background: var(--color-accent-dark)">Dark</div>
+        </div>
+    </div>
+
+    <!-- ALT ACCENT -->
+    <div class="section">
+        <h2>Alt Accent (Amber)</h2>
+        <div class="grid">
+            <div class="swatch" style="background: var(--color-accent-alt)">Base</div>
+            <div class="swatch light" style="background: var(--color-accent-alt-soft)">Soft</div>
+        </div>
+    </div>
+
+    <!-- SEMANTIC -->
+    <div class="section">
+        <h2>Semantic Colors</h2>
+        <div class="grid">
+            <div class="swatch" style="background: var(--color-success)">Success</div>
+            <div class="swatch" style="background: var(--color-warning)">Warning</div>
+            <div class="swatch" style="background: var(--color-error)">Error</div>
+            <div class="swatch" style="background: var(--color-info)">Info</div>
+        </div>
+    </div>
+
+    <!-- TEXT -->
+    <div class="section">
+        <h2>Text Colors</h2>
+        <div class="grid">
+            <div class="swatch light" style="background: white; color: var(--color-text-primary)">
+                Primary Text
+            </div>
+            <div class="swatch light" style="background: white; color: var(--color-text-secondary)">
+                Secondary Text
+            </div>
+            <div class="swatch light" style="background: white; color: var(--color-text-muted)">
+                Muted Text
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPONENTS -->
+    <div class="section">
+        <h2>Components</h2>
+        <div class="row">
+            <button class="button button-primary">Primary Button</button>
+            <button class="button button-accent">Accent Button</button>
+            <input class="input" placeholder="Input field..." />
+        </div>
+
+        <div class="card-demo" style="margin-top: 16px;">
+            <div class="card">
+                <h3>Card Title</h3>
+                <p>This is a sample card using your system.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="section">
+        <h2>Dark Mode</h2>
+        <button class="button button-primary" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+</div>
+
+<script>
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute("data-theme");
+        document.documentElement.setAttribute(
+            "data-theme",
+            current === "dark" ? "light" : "dark"
+        );
+    }
+</script>

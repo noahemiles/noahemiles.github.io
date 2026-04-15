@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { DetailsComponent } from './details/details.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { ProjectsPageComponent } from './projects-page/projects-page.component';
-import { OpenGymComponent } from './open-gym/open-gym.component';
+import { HomeComponent } from './portfolio/projects/angular-tutorial/home/home.component';
+import { DetailsComponent } from './portfolio/projects/angular-tutorial/details/details.component';
+import { AboutComponent } from './portfolio/about/about.component';
+import { ContactComponent } from './portfolio/contact/contact.component';
+import { ProjectsPageComponent } from './portfolio/projects/projects-page/projects-page.component';
+import { OpenGymLandingPageComponent } from './open-gym/open-gym-landing-page/open-gym-landing-page.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { ColorDemoComponent } from './open-gym/color-demo/color-demo.component';
 
 export const routes: Routes = [
   {
@@ -36,7 +37,7 @@ export const routes: Routes = [
   },
   {
     path: 'open-gym',
-    component: OpenGymComponent,
+    component: OpenGymLandingPageComponent,
     title: 'Open Gym'
   },
   {
@@ -48,5 +49,10 @@ export const routes: Routes = [
     path: 'open-gym/terms',
     component: TermsComponent,
     title: 'Terms'
+  },
+  {
+    path: 'open-gym/color',
+    component: ColorDemoComponent,
+    title: 'Color Demo'
   }
 ];

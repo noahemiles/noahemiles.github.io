@@ -1,0 +1,82 @@
+<div id="screen-onboard" class="screen active">
+    <div class="card">
+        <div class="logo">Open<span>Gym</span></div>
+        <h2>Welcome</h2>
+        <p class="subtitle">Let's get you set up. Just a few quick details.</p>
+
+        <form [formGroup]="userForm" (submit)="login()">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" formControlName="firstName" required>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" formControlName="lastName" requierd>
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" requied>
+        </form>
+
+        <div class="divider"></div>
+
+        <p style="font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px;">How will you
+            use OpenGym?</p>
+        <p style="font-size: 12px; color: var(--color-text-secondary);">You can always add the other role later.</p>
+
+        <div class="role-grid">
+            <div class="role-card" id="role-host" onclick="selectRole('host')">
+                <div class="role-icon">🏟️</div>
+                <div class="role-title">Host</div>
+                <div class="role-desc">Create and manage open gym sessions for players to join.</div>
+            </div>
+            <div class="role-card" id="role-player" onclick="selectRole('player')">
+                <div class="role-icon">🏀</div>
+                <div class="role-title">Player</div>
+                <div class="role-desc">Find open gyms near you and RSVP to sessions.</div>
+            </div>
+        </div>
+        <div class="error" id="form-error">Please fill out all fields and select a role.</div>
+
+        <button class="btn btn-primary" onclick="handleSubmit()">Continue</button>
+    </div>
+</div>
+
+<script>
+    let selectedRole = null;
+
+    function selectRole(role) {
+        selectedRole = role;
+        document.getElementById('role-host').classList.toggle('selected', role === 'host');
+        document.getElementById('role-player').classList.toggle('selected', role === 'player');
+    }
+
+    function handleSubmit() {
+        const first = document.getElementById('firstName').value.trim();
+        const last = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const err = document.getElementById('form-error');
+
+        if (!first || !last || !email || !age || !selectedRole) {
+            err.style.display = 'block';
+            return;
+        }
+        err.style.display = 'none';
+
+        const initials = (first[0] + last[0]).toUpperCase();
+        document.getElementById('host-avatar').textContent = initials;
+        document.getElementById('player-avatar').textContent = initials;
+        document.getElementById('host-greeting').textContent = `Welcome back, ${first}.`;
+        document.getElementById('player-greeting').textContent = `Welcome back, ${first}.`;
+
+        showScreen(selectedRole === 'host' ? 'screen-host' : 'screen-player');
+    }
+
+    function showScreen(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function resetFlow() {
+        selectedRole = null;
+        document.getElementById('role-host').classList.remove('selected');
+        document.getElementById('role-player').classList.remove('selected');
+        showScreen('screen-onboard');
+    }
+</script>
