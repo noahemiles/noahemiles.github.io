@@ -1,4 +1,4 @@
-import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
+import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { filter } from 'rxjs/operators';
     selector: 'app-root',
     imports: [RouterOutlet, RouterLink],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './app.component.css'
 })
 export class AppComponent {
