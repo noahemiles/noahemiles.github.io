@@ -1,8 +1,8 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { HousingLocation } from '../housing-location';
-import { HousingService } from '../housing.service';
+import { HousingLocation } from '../interfaces/housing-location';
+import { HousingService } from '../services/housing.service';
 
 import { FormControl, FormGroup, ReactiveFormsModule
 
