@@ -1,14 +1,14 @@
-import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
+import { Component, DestroyRef, ElementRef, HostListener, inject, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterOutlet, RouterLink],
+    templateUrl: './app.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './app.css'
 })
 export class AppComponent {
   title = 'Noah Miles';

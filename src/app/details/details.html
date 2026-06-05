@@ -1,6 +1,6 @@
 <button class="back-button"><a routerLink="/angular">Back to all listings</a></button>
 <article>
-    <img [src]="housingLocation?.photo" alt="" class="listing-photo" onerror="this.onerror=null; this.src='https://www.placekittens.com/300/300'">
+    <img [src]="$safeNavigationMigration(housingLocation?.photo)" alt="" class="listing-photo" onerror="this.onerror=null; this.src='https://www.placekittens.com/300/300'">
     <section class="listing-description">
         <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
         <p class="listing-location">{{ housingLocation?.city }}, {{ housingLocation?.state }}</p>

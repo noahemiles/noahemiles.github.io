@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HousingLocation } from '../housing-location';
 import { HousingService } from '../housing.service';
@@ -8,11 +8,11 @@ import { FormControl, FormGroup, ReactiveFormsModule
 
  } from '@angular/forms';
 @Component({
-  selector: 'app-details',
-  standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule],
-  templateUrl: './details.component.html',
-  styleUrl: './details.component.css'
+    selector: 'app-details',
+    imports: [RouterLink, ReactiveFormsModule],
+    templateUrl: './details.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './details.css'
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);

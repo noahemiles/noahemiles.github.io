@@ -1,13 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProjectDetails } from '../project-details';
 
 @Component({
-  selector: 'app-project-tile',
-  standalone: true,
-  imports: [RouterLink],
-  templateUrl: './project-tile.component.html',
-  styleUrl: './project-tile.component.css'
+    selector: 'app-project-tile',
+    imports: [RouterLink],
+    templateUrl: './project-tile.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './project-tile.css'
 })
 export class ProjectTileComponent {
   @Input() projectDetails!: ProjectDetails;

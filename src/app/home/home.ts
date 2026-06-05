@@ -1,14 +1,14 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+
+import { HousingLocationComponent } from '../housing-location/housing-location';
 import { HousingLocation } from '../housing-location';
 import { HousingService } from '../housing.service';
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, HousingLocationComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [HousingLocationComponent],
+    templateUrl: './home.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './home.css'
 })
 export class HomeComponent {
   housingLocationList: HousingLocation[] = [];
