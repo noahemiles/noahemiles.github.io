@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProjectDetails } from '../project-details';
+import { ProjectDetails } from '../interfaces/project-details';
 
 @Component({
     selector: 'app-project-tile',
