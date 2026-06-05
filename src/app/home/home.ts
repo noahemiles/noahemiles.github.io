@@ -1,14 +1,14 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
+import { HousingLocationComponent } from '../housing-location/housing-location';
 import { HousingLocation } from '../housing-location';
 import { HousingService } from '../housing.service';
 @Component({
     selector: 'app-home',
     imports: [HousingLocationComponent],
-    templateUrl: './home.component.html',
+    templateUrl: './home.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './home.component.css'
+    styleUrl: './home.css'
 })
 export class HomeComponent {
   housingLocationList: HousingLocation[] = [];

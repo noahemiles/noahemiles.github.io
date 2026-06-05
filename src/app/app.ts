@@ -6,9 +6,9 @@ import { filter } from 'rxjs/operators';
 @Component({
     selector: 'app-root',
     imports: [RouterOutlet, RouterLink],
-    templateUrl: './app.component.html',
+    templateUrl: './app.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './app.component.css'
+    styleUrl: './app.css'
 })
 export class AppComponent {
   title = 'Noah Miles';

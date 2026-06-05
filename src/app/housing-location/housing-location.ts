@@ -5,9 +5,9 @@ import { RouterLink } from '@angular/router';
 @Component({
     selector: 'app-housing-location',
     imports: [RouterLink],
-    templateUrl: './housing-location.component.html',
+    templateUrl: './housing-location.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './housing-location.component.css'
+    styleUrl: './housing-location.css'
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation;

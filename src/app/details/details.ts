@@ -10,9 +10,9 @@ import { FormControl, FormGroup, ReactiveFormsModule
 @Component({
     selector: 'app-details',
     imports: [RouterLink, ReactiveFormsModule],
-    templateUrl: './details.component.html',
+    templateUrl: './details.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './details.component.css'
+    styleUrl: './details.css'
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);

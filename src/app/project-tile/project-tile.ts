@@ -5,9 +5,9 @@ import { ProjectDetails } from '../project-details';
 @Component({
     selector: 'app-project-tile',
     imports: [RouterLink],
-    templateUrl: './project-tile.component.html',
+    templateUrl: './project-tile.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './project-tile.component.css'
+    styleUrl: './project-tile.css'
 })
 export class ProjectTileComponent {
   @Input() projectDetails!: ProjectDetails;

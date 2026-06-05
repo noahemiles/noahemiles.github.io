@@ -3,9 +3,9 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 @Component({
     selector: 'app-contact',
     imports: [],
-    templateUrl: './contact.component.html',
+    templateUrl: './contact.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './contact.component.css'
+    styleUrl: './contact.css'
 })
 export class ContactComponent {
   readonly email = 'noahemiles@gmail.com';

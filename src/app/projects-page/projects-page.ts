@@ -1,12 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ProjectTileComponent } from "../project-tile/project-tile.component";
+import { ProjectTileComponent } from "../project-tile/project-tile";
 
 @Component({
     selector: 'app-projects-page',
     imports: [ProjectTileComponent],
-    templateUrl: './projects-page.component.html',
+    templateUrl: './projects-page.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    styleUrl: './projects-page.component.css'
+    styleUrl: './projects-page.css'
 })
 export class ProjectsPageComponent {
 
