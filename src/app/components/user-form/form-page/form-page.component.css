@@ -2,20 +2,39 @@ div.form-page {
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 div.form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
     width: 100%;
+    min-width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+div.form div.fields {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 div.form button {
     width: 100px;
     margin-right: 10px;
+    padding: 5px;
 }
 
+div.error-box {
+    height: 25px;
+}
 b.error {
     color: red;
 }
@@ -23,6 +42,14 @@ b.error {
 div.form input {
     margin-bottom: 10px;
     max-width: 25vw;
+    height: 20px;
+    padding: 5px;
+    font-size: medium;
+}
+
+div.form label {
+    font-size: large;
+    font-weight: bolder;
 }
 
 div.user-display {

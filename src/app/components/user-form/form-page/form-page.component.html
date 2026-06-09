@@ -1,13 +1,15 @@
 
 <div class="form-page">
     <div class="form">
-        <h2>User Form</h2>
-        <label for="user-name">Name: </label>
-        <input type="text" name="user-name" id="user-name" class="name" required>
-        <label for="user-email">Email: </label>
-        <input type="email" name="user-email" id="user-email" class="email">
-        <div>
+        <h2 style="text-decoration: underline;">Add Users</h2>
+        <div class="fields">
+            <label for="user-name">Name: </label>
+            <input type="text" name="user-name" id="user-name" class="name" required>
+            <label for="user-email">Email: </label>
+            <input type="email" name="user-email" id="user-email" class="email">
             <button type="submit" (click)="onSubmit()">Add User</button>
+        </div>
+        <div class="error-box">
             <b class="error">{{ errorMessage }}</b>
         </div>
     </div>

@@ -17,7 +17,6 @@ export class UserTileComponent {
   protected user: User | undefined;
   private emptyUser: User = { id: "", name: "", email: ""};
   ngOnInit() {
-    console.log("Constructor ID: ", this.id);
     this.user = this.userService.getUser(this.id);
   }
 
