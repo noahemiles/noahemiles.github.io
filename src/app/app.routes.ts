@@ -6,6 +6,7 @@ import { ContactComponent } from './components/contact/contact';
 import { ProjectsPageComponent } from './components/projects/projects-page/projects-page';
 import { FormPageComponent } from './components/user-form/form-page/form-page.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { UserTileComponent } from './components/user-form/user-tile/user-tile.component';
 
 
 const name = "Noah Miles";
@@ -44,5 +45,10 @@ export const routes: Routes = [
     path: 'form',
     component: FormPageComponent,
     title: `${name} - User Form`
-  }
+  },
+  {
+    path: 'user/:id',
+    component: UserTileComponent,
+    title: `${name} - Details`
+  },
 ];

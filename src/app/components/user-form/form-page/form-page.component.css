@@ -1,0 +1,34 @@
+div.form-page {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+div.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 25vw;
+}
+
+div.form button {
+    width: 100px;
+}
+
+div.form input {
+    margin-bottom: 10px;
+}
+
+div.user-display {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1025px) {
+    div.user-display {
+        flex-direction: row;
+    }
+}
+
