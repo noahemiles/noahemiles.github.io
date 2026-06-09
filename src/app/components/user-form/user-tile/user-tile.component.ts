@@ -30,6 +30,8 @@ export class UserTileComponent {
       if (confirm("You have unsaved changes. Continue?")) {
         this.resetForm();
       }
+    } else {
+      this.toggleEdit();
     }
   }
 
@@ -39,24 +41,17 @@ export class UserTileComponent {
   }
 
   saveChanges() {
-    const nameField = document.getElementById(`${this.user?.id}-name`) as HTMLInputElement;
-    const emailField = document.getElementById(`${this.user?.id}-email`) as HTMLInputElement;
-    let changed = false;
-    if (!((nameField.value && nameField.value.length == 0) || (emailField.value && emailField.value.length == 0))) {
-      if (nameField.value && this.user!.name != nameField.value) {
-        this.user!.name = nameField.value;
-        changed = true;
-      }
-      if (emailField.value && this.user!.email != emailField.value) {
-        this.user!.email = emailField.value;
-        changed = true;
-      }
-      if (changed) {
-        this.userService.updateUser(this.user ?? this.emptyUser);
-      }
+    const hasChanged = this.userInfoHasChanged();
+    const validFields = this.validFields();
+    if (validFields && hasChanged) {
+      const nameField = document.getElementById(`${this.user!.id}-name`) as HTMLInputElement;
+      const emailField = document.getElementById(`${this.user!.id}-email`) as HTMLInputElement;
+      this.user!.name = nameField.value;
+      this.user!.email = emailField.value;
+      this.userService.updateUser(this.user ?? this.emptyUser);
       this.toggleEdit();
     } else {
-      this.resetForm();
+      alert("Invalid");
     }
   }
 
@@ -88,5 +83,29 @@ export class UserTileComponent {
     }
 
     return changed;
+  }
+
+
+  // TODO: MOVE into service
+  validFields(): boolean {
+    const nameField = document.getElementById(`${this.user?.id}-name`) as HTMLInputElement;
+    const emailField = document.getElementById(`${this.user?.id}-email`) as HTMLInputElement;
+
+    return this.validName(nameField.value) && this.validEmail(emailField.value);
+  }
+
+  validName(name: string): boolean {
+    let valid = true;
+    if (name.length == 0) {
+      valid = false;
+    }
+    return valid;
+  }
+  validEmail(email: string): boolean {
+    let valid = true;
+    if (email.length == 0 || email.indexOf("@") == -1) {
+      valid = false;
+    }
+    return valid;
   }
 }
