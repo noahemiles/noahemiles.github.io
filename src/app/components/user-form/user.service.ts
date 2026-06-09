@@ -9,8 +9,6 @@ export class UserService {
     return this.users;
   }
   public getUser(userId: string): User | undefined{
-    console.log("GETUSER: ", userId);
-    console.log("GETUSER: ", this.users);
     return this.users.get(userId);
   }
 
@@ -26,7 +24,6 @@ export class UserService {
 
   public addUser(user: User): void {
     this.users.set(user.id, user);
-    console.log(this.users);
   }
 
   public deleteUser(userId: string) {
