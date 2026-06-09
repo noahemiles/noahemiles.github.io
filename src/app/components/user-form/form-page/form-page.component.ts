@@ -11,7 +11,7 @@ import { UserTileComponent } from '../user-tile/user-tile.component';
   styleUrl: './form-page.component.css',
 })
 export class FormPageComponent {
-
+  protected errorMessage = '';
   private userService = inject(UserService);
 
   protected users: Map<string, User> = this.userService.getUsers();
@@ -25,12 +25,22 @@ export class FormPageComponent {
     // validate values
 
     // add user to service
-    const newUser: User = {
-      id: crypto.randomUUID(),
-      name: userName,
-      email: userEmail
-    };
-    this.userService.addUser(newUser);
+    if (userNameField.value.length > 0 && userEmailField.value.length > 0) {
+      const newUser: User = {
+        id: crypto.randomUUID(),
+        name: userName,
+        email: userEmail
+      };
+      this.userService.addUser(newUser);
+      this.errorMessage = "";
+      userNameField.value = '';
+      userEmailField.value = '';
+    } else {
+      this.errorMessage = "Name and Email are required fields.";
+      setTimeout(() => {
+        this.errorMessage = "";
+      }, 5000);
+    }
   }
 
 }

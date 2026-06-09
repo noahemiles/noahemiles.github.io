@@ -10,7 +10,7 @@
             <button class="edit" (click)="toggleEdit()">Edit</button>
         } @else {
             <button class="save" (click)="saveChanges()">Save</button>
-            <button class="cancel" (click)="resetForm()">Cancel</button>
+            <button class="cancel" (click)="cancelEdit()">Cancel</button>
         }
         <button class="delete" (click)="deleteUser(this!.user!.id)">Delete</button>
     </div>

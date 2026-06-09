@@ -25,6 +25,14 @@ export class UserTileComponent {
     this.editing = !this.editing;
   }
 
+  cancelEdit() {
+    if (this.userInfoHasChanged()) {
+      if (confirm("You have unsaved changes. Continue?")) {
+        this.resetForm();
+      }
+    }
+  }
+
   resetForm() {
     this.updateForm(this.user);
     this.toggleEdit();
@@ -33,10 +41,23 @@ export class UserTileComponent {
   saveChanges() {
     const nameField = document.getElementById(`${this.user?.id}-name`) as HTMLInputElement;
     const emailField = document.getElementById(`${this.user?.id}-email`) as HTMLInputElement;
-    this.user!.name = nameField.value;
-    this.user!.email = emailField.value;
-    this.userService.updateUser(this.user ?? this.emptyUser);
-    this.toggleEdit();
+    let changed = false;
+    if (!((nameField.value && nameField.value.length == 0) || (emailField.value && emailField.value.length == 0))) {
+      if (nameField.value && this.user!.name != nameField.value) {
+        this.user!.name = nameField.value;
+        changed = true;
+      }
+      if (emailField.value && this.user!.email != emailField.value) {
+        this.user!.email = emailField.value;
+        changed = true;
+      }
+      if (changed) {
+        this.userService.updateUser(this.user ?? this.emptyUser);
+      }
+      this.toggleEdit();
+    } else {
+      this.resetForm();
+    }
   }
 
   updateForm(user: User | undefined): void {
@@ -50,6 +71,22 @@ export class UserTileComponent {
   }
 
   deleteUser(userId: string) {
-    this.userService.deleteUser(userId);
+    if (confirm("Delete User?")) {
+      this.userService.deleteUser(userId);
+    }
+  }
+
+  userInfoHasChanged(): boolean {
+    const nameField = document.getElementById(`${this.user?.id}-name`) as HTMLInputElement;
+    const emailField = document.getElementById(`${this.user?.id}-email`) as HTMLInputElement;
+    let changed = false;
+    const currentUserName = this.user?.name;  
+    const currentUserEmail = this.user?.email;
+
+    if (nameField.value != currentUserName || emailField.value != currentUserEmail) {
+      changed = true;
+    }
+
+    return changed;
   }
 }
