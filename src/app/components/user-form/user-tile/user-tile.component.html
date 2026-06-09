@@ -1,7 +1,7 @@
 <div class="user-tile">
     <h2>USER {{ this.user?.name || "undefined" }}</h2>
     <div class="user-content">
-        <input type="text" name="" id="{{this.user!.id}}-id" readonly [value]="this.user!.id">
+        <!-- <input type="text" name="" id="{{this.user!.id}}-id" readonly [value]="this.user!.id"> -->
         <input type="text" name="" id="{{this.user!.id}}-name" [readonly]="!editing" [value]="this.user!.name">
         <input type="text" name="" id="{{this.user!.id}}-email" [readonly]="!editing" [value]="this.user!.email">
     </div>
