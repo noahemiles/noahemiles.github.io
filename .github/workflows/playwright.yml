@@ -26,13 +26,14 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Build app
+      - name: Run Playwright tests (HTML report)
+        run: npm run test:e2e -- --reporter=html
+
+      - name: Build Pages
+        if: success()
         run: npm run pages
 
-      - name: Run Playwright tests
-        run: npm run test:e2e
-
-      - name: Upload test results
+      - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4
         if: always()
         with:
