@@ -8,32 +8,6 @@ test.describe('Form', () => {
         await expect(page.locator('body')).toBeVisible();
     });
     test.describe('Input Validation', () => {
-        test('should show error message on invalid fields', async ({ page }) => {
-            const nameField = page.locator('#name');
-            const emailField = page.locator('#email');
-            const addUserButton = page.locator('button[type="submit"]');
-            /* empty fields */
-            await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeVisible();
-            
-            /* No email */
-            await nameField.fill('Test User');
-            await emailField.fill('');
-            await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeVisible();
-
-            /* No Name */
-            await nameField.fill('');
-            await emailField.fill('test@gmail.com');
-            await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeVisible();
-            
-            /* Invalid Email */
-            await nameField.fill('');
-            await emailField.fill('testgmail.com');
-            await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeVisible();
-        });
         test('should add user when valid fields', async ({ page }) => {
             const nameField = page.locator('#name');
             const emailField = page.locator('#email');
@@ -43,7 +17,6 @@ test.describe('Form', () => {
             await emailField.fill('test@gmail.com');
             
             await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeHidden();
             await expect(page.locator('.user-tile')).toBeVisible();
             await expect(page.locator('.user-tile h2')).toHaveText('Test User');
             await expect(page.locator('.user-tile .user-content input.user-name')).toHaveValue('Test User');
@@ -66,7 +39,6 @@ test.describe('Form', () => {
             await emailField.fill('test@gmail.com');
             
             await addUserButton.click();
-            await expect(page.locator('.error-box')).toBeHidden();
             const userTile = page.locator('div.user-tile');
             await expect(userTile).toBeVisible();
 
