@@ -2,8 +2,8 @@
     <h2>{{ this.user?.name || `User` }}</h2>
     <div class="user-content">
         <!-- <input type="text" name="" id="{{this.user!.id}}-id" readonly [value]="this.user!.id"> -->
-        <input type="text" name="" id="{{this.user!.id}}-name" [readonly]="!editing" [value]="this.user!.name">
-        <input type="text" name="" id="{{this.user!.id}}-email" [readonly]="!editing" [value]="this.user!.email">
+        <input type="text" name="" class="user-name" id="{{this.user!.id}}-name" [readonly]="!editing" [value]="this.user!.name">
+        <input type="text" name="" class="user-email" id="{{this.user!.id}}-email" [readonly]="!editing" [value]="this.user!.email">
     </div>
     <div class="buttons">
         @if (!editing) {
