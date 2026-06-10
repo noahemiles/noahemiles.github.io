@@ -1,0 +1,17 @@
+<div class="user-tile">
+    <h2>{{ this.user?.name || `User` }}</h2>
+    <div class="user-content">
+        <!-- <input type="text" name="" id="{{this.user!.id}}-id" readonly [value]="this.user!.id"> -->
+        <input type="text" name="" class="user-name" id="{{this.user!.id}}-name" [readonly]="!editing" [value]="this.user!.name">
+        <input type="text" name="" class="user-email" id="{{this.user!.id}}-email" [readonly]="!editing" [value]="this.user!.email">
+    </div>
+    <div class="buttons">
+        @if (!editing) {
+            <button class="edit" (click)="toggleEdit()">Edit</button>
+        } @else {
+            <button class="save" (click)="saveChanges()">Save</button>
+            <button class="cancel" (click)="cancelEdit()">Cancel</button>
+        }
+        <button class="delete" (click)="deleteUser(this!.user!.id)">Delete</button>
+    </div>
+</div>

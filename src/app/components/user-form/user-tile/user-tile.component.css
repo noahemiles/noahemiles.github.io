@@ -1,0 +1,39 @@
+div.user-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+div.user-content input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 20px;
+    padding: 5px;
+    font-size: medium;
+}
+
+div.user-tile {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    max-width: 100%;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+div.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
