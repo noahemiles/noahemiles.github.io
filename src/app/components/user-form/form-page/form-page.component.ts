@@ -43,10 +43,7 @@ export class FormPageComponent implements OnInit {
       userNameField.value = '';
       userEmailField.value = '';
     } else {
-      this.errorMessage = "Name and Email are required fields.";
-      setTimeout(() => {
-        this.errorMessage = "";
-      }, 5000);
+      // this.errorMessage = "Name and Email are required fields.";
     }
   }
 

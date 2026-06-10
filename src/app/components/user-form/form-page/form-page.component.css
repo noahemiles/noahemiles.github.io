@@ -19,7 +19,7 @@ div.form {
     box-sizing: border-box;
 }
 
-div.form div.fields {
+div.form form.fields {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
