@@ -69,8 +69,11 @@ export class UserTileComponent {
   }
 
   deleteUser(userId: string) {
-    if (confirm("Delete User?")) {
-      this.userService.deleteUser(userId);
+    const user = this.userService.getUser(userId);
+    if (user) {
+      if (confirm(`Delete "${user.name ?? "User"}"?`)) {
+        this.userService.deleteUser(userId);
+      }
     }
   }
 

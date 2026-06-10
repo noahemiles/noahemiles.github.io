@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { KeyValuePipe } from '@angular/common';
@@ -11,13 +11,18 @@ import { FormValidationService } from '../form-validation.service';
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.css',
 })
-export class FormPageComponent {
+export class FormPageComponent implements OnInit {
   protected errorMessage = '';
   private userService = inject(UserService);
   private validationService = inject(FormValidationService);
 
-  protected users: Map<string, User> = this.userService.getUsers();
+  protected users: Map<string, User> = new Map();
 
+  ngOnInit(): void {
+    this.userService.loadData();
+    this.users = this.userService.getUsers();
+  }
+  
   public onSubmit() {
     // get form values
     const userNameField = document.getElementById('name') as HTMLInputElement;
