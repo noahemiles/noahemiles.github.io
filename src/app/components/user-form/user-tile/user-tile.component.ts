@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import { FormValidationService } from '../form-validation.service';
 
 @Component({
   selector: 'app-user-tile',
@@ -12,6 +13,7 @@ export class UserTileComponent {
   protected editing: boolean = false;
 
   protected userService = inject(UserService);
+  protected validationService = inject(FormValidationService);
 
   @Input() id: string = '';
   protected user: User | undefined;
@@ -41,13 +43,15 @@ export class UserTileComponent {
 
   saveChanges() {
     const hasChanged = this.userInfoHasChanged();
-    const validFields = this.validFields();
-    if (validFields && hasChanged) {
-      const nameField = document.getElementById(`${this.user!.id}-name`) as HTMLInputElement;
-      const emailField = document.getElementById(`${this.user!.id}-email`) as HTMLInputElement;
-      this.user!.name = nameField.value;
-      this.user!.email = emailField.value;
-      this.userService.updateUser(this.user ?? this.emptyUser);
+    const validFields = this.validationService.validFields(this.user);
+    if (validFields) {
+      if (hasChanged) {
+        const nameField = document.getElementById(`${this.user!.id}-name`) as HTMLInputElement;
+        const emailField = document.getElementById(`${this.user!.id}-email`) as HTMLInputElement;
+        this.user!.name = nameField.value;
+        this.user!.email = emailField.value;
+        this.userService.updateUser(this.user ?? this.emptyUser);
+      }
       this.toggleEdit();
     } else {
       alert("Invalid");
@@ -82,29 +86,5 @@ export class UserTileComponent {
     }
 
     return changed;
-  }
-
-
-  // TODO: MOVE into service
-  validFields(): boolean {
-    const nameField = document.getElementById(`${this.user?.id}-name`) as HTMLInputElement;
-    const emailField = document.getElementById(`${this.user?.id}-email`) as HTMLInputElement;
-
-    return this.validName(nameField.value) && this.validEmail(emailField.value);
-  }
-
-  validName(name: string): boolean {
-    let valid = true;
-    if (name.length == 0) {
-      valid = false;
-    }
-    return valid;
-  }
-  validEmail(email: string): boolean {
-    let valid = true;
-    if (email.length == 0 || email.indexOf("@") == -1) {
-      valid = false;
-    }
-    return valid;
   }
 }
