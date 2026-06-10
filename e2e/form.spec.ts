@@ -142,7 +142,7 @@ test.describe('Form', () => {
             await expect(deleteButton).toBeVisible();
             page.once('dialog', async dialog => {
                 expect(dialog.type()).toBe('confirm');
-                expect(dialog.message()).toBe('Delete User?');
+                expect(dialog.message()).toBe('Delete "Test User"?');
                 await dialog.dismiss();
             });
             await deleteButton.click();
@@ -150,7 +150,7 @@ test.describe('Form', () => {
 
             page.once('dialog', async dialog => {
                 expect(dialog.type()).toBe('confirm');
-                expect(dialog.message()).toBe('Delete User?');
+                expect(dialog.message()).toBe('Delete "Test User"?');
                 await dialog.accept();
             });
             await deleteButton.click();
