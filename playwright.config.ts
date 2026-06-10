@@ -10,6 +10,12 @@ export default defineConfig({
     headless: true,
     trace: 'on-first-retry',
   },
+  webServer: {
+    command: 'npm start',
+    url: 'http://localhost:4200',
+    timeout: 120_000,
+    reuseExistingServer: !process.env.CI,
+  },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
