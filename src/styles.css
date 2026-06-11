@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Ensure SVGs passed into components via <ng-content> receive the intended sizing
+	 and layout (projected content isn't affected by component-scoped styles). */
+app-project-tile .project-bar svg,
+app-project-tile .project-bar__icon svg {
+	width: 1.75rem;
+	height: 1.75rem;
+	display: block;
+}

@@ -1,5 +1,11 @@
 <section>
-    <app-project-tile [projectDetails]="{path: 'angular', title: 'Angular Tutorial'}"></app-project-tile>
-    <app-project-tile [projectDetails]="{path: 'form', title: 'User Form Demo'}"></app-project-tile>
-    <app-project-tile [projectDetails]="{path: 'https://github.com/noahemiles/noahemiles.github.io', title: 'Github Pages Website', isExternal: true}"></app-project-tile>
+    <app-project-tile [projectDetails]="{path: 'angular', title: 'Angular Tutorial'}">
+        <svg class="project-bar__svg" brackets-icon></svg>
+    </app-project-tile>
+    <app-project-tile [projectDetails]="{path: 'form', title: 'User Form Demo'}">
+        <svg class="project-bar__svg" brackets-icon></svg>
+    </app-project-tile>
+    <app-project-tile [projectDetails]="{path: 'https://github.com/noahemiles/noahemiles.github.io', title: 'Github Pages Website', isExternal: true}">
+        <svg class="project-bar__svg" github-icon></svg>
+    </app-project-tile>
 </section>
