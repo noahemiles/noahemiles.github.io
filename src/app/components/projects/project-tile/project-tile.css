@@ -40,12 +40,6 @@
     color: #0a66c2;
 }
 
-.project-bar__svg {
-    width: 1.75rem;
-    height: 1.75rem;
-    display: block;
-}
-
 .project-bar__body {
     display: flex;
     flex-direction: column;
